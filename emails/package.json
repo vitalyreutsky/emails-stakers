@@ -1,0 +1,20 @@
+{
+  "name": "emails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minTemplates": "node index.js",
+    "openDoc": "docsify serve --open ./docs "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-inliner": "^2.0.0",
+    "docsify-cli": "^4.4.4",
+    "dotenv": "^14.2.0",
+    "html-minifier-terser": "^7.0.0-alpha.1",
+    "nodemailer": "^6.7.2"
+  }
+}

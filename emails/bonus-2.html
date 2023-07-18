@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        a {
+            font-family: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .root {
+            background: #0F86A4;
+            border-radius: 15px;
+        }
+
+        .content {
+            max-width: min(800px, 100%);
+            margin: 0 auto;
+            padding: 20px 50px 40px 50px;
+            font-size: 16px;
+            line-height: 1.5;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .header {
+            background: linear-gradient(103.5deg, #37C5D5 -56.11%, #0E9AAB 138.75%);;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 68px;
+        }
+
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .header-logo-link {
+            display: inline-block;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 20px;
+        }
+
+        .header-logo {
+        }
+
+        .header-menu {
+            margin-top: 10px;
+            float: right;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .header-item {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .header .header-link {
+            display: block;
+            line-height: 48px;
+            position: relative;
+            top: 2px;
+            color: #ffffff;
+            height: 48px;
+            padding: 0 15px;
+            transition: all 0.2s;
+            font-weight: 850;
+            font-size: 12px;
+        }
+
+        .header .header-link:hover {
+            color: #a6ff00;
+        }
+
+
+        .header .header-link-tips {
+            padding-right: 35px;
+        }
+
+        .banner-container {
+            display: inline-block;
+            margin-top: 15px;
+            background: linear-gradient(102.17deg, #37C5D5 0.31%, #0E9AAB 104.63%);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .banner-image {
+            display: inline-block;
+            max-width: 380px;
+            float: left;
+            font-size: 0;
+            /* height: 251px;
+            width: calc(100% - 260px); */
+        }
+
+        .banner-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-content {
+            display: block;
+            max-width: 300px;
+            float: right;
+            color: #fff;
+            padding: 20px 45px 40px 15px;
+            background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-double-coin.png") no-repeat top 5px right 8px;;
+            background-size: 30%;
+        }
+
+        .banner-title {
+            font-weight: 850;
+            font-size: 30px;
+            line-height: 110%;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        .banner-text {
+            font-size: 12px;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            font-weight: 200;
+            opacity: 0.75;
+        }
+
+        .banner-image-mobi {
+            display: none;
+        }
+
+        .how-to {
+            display: inline-block;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 30px 4px 20px;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .how-to-title {
+            display: block;
+            font-weight: 800;
+            font-size: 25px;
+            line-height: 112%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .how-to-title b {
+            color: #F2D047;
+            text-decoration: underline;
+        }
+
+        .how-to-line-bottom {
+            width: 84%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20%;
+        }
+
+        .how-to-item {
+            max-width: 220px;
+            width: 220px;
+            display: inline-block;
+            background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/how-to.png") no-repeat;
+            background-size: 100%;
+            text-align: left;
+            margin: 0 20px 20px 20px;
+        }
+
+        .how-to-item-top {
+            margin-bottom: 20px;
+        }
+
+        .how-to-item-circle {
+            font-weight: 900;
+            font-size: 22px;
+            line-height: 100%;
+            text-transform: uppercase;
+            text-align: left;
+            margin: 0px 15px 0px 9px;
+            width: 36px;
+            height: 36px;
+            padding-top: 15px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .how-to-item-title {
+            color: #082836;
+            font-weight: 850;
+            font-size: 16px;
+            line-height: 100%;
+            display: inline-block;
+
+        }
+
+        .how-to-item-text {
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+            color: #FFFFFF;
+            padding-left: 25px;
+            font-weight: 400;
+            padding-top: 7px;
+        }
+
+        .what-is {
+            margin: 0px 0 27px;
+        }
+
+        .what-is-title {
+            font-style: normal;
+            font-weight: 800;
+            font-size: 25px;
+            line-height: 112%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .what-is-title span {
+            color: #FFDD4A;
+            text-decoration: underline;
+        }
+
+        .what-is-text {
+            font-family: Segoe UI, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 130%;
+            text-align: center;
+            color: #ffffff;
+            opacity: 0.8;
+            max-width: 485px;
+            margin: 8px auto 0;
+        }
+
+        .what-is-table {
+            display: flex;
+            margin: 5px auto 0;
+        }
+
+        .what-is-table a {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+
+        a.what-is-betting-tips-link {
+        }
+
+        .what-is-table img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .last {
+            display: block;
+            background: linear-gradient(102.03deg, #59C54E 0.31%, #23ADD1 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .last-image {
+            display: block;
+            float: left;
+            padding: 36px 13px 0px 20px;
+            box-sizing: border-box;
+        }
+
+        .last-content {
+            display: block;
+            padding: 20px 12px 20px 12px;
+            min-width: 210px;
+            width: calc(100% - 287px);
+            float: left;
+            background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/coin-banner-1.png") no-repeat top 11px right -3px;
+            background-size: 62px 47px;
+        }
+
+        .last-content-title {
+            font-weight: 850;
+            font-size: 20px;
+            line-height: 29px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .last-content-image {
+            display: none;
+            margin: 15px auto 15px auto;
+        }
+
+        .last-content-text {
+            font-size: 12px;
+            font-weight: 200;
+            line-height: 1.4;
+            opacity: 0.75;
+        }
+
+        .last-button {
+            padding: 47px 19px 40px 12px;
+            display: block;
+            float: left;
+            background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/coin-banner-2.png") no-repeat bottom right;
+            background-size: 65px 51px;
+        }
+
+        .button-content {
+            box-sizing: border-box;
+            width: 142px;
+            padding: 15px 18px;
+            color: #082836;
+            font-weight: bold;
+            font-size: 13px;
+            background: #FFDD4A;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 14px;
+            text-transform: uppercase;
+        }
+
+        .last-content-button {
+            width: 122px;
+            padding: 12px 18px;
+            font-size: 12px;
+        }
+
+        .footer {
+            color: rgba(255, 255, 255, 0.4);
+            font-family: Segoe UI, sans-serif;
+            margin-top: 27px;
+            font-size: 13px;
+            color: #BAD9E1;
+        }
+
+        .footer-icons {
+            margin-bottom: 25px;
+        }
+
+        .footer-left-image {
+            float: left;
+            flex-shrink: 0;
+            margin-right: 14px;
+        }
+
+        .footer-left-image img {
+            padding-top: 17%;
+        }
+
+        .footer-right-images {
+            opacity: 0.8;
+            width: 100%;
+        }
+
+        .footer-right-images img {
+            margin: 2% 0 0 1%;
+            vertical-align: middle;
+        }
+
+        .footer-title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 14px;
+            text-transform: uppercase;
+            color: #BAD9E1;
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+            color: #BAD9E1;
+        }
+
+        .footer-bottom-line {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-line-2 {
+            margin-top: 12px;
+        }
+
+        .footer-bottom-line-sep {
+            margin: 0 10px;
+        }
+
+        .footer .footer-bottom-line a {
+            text-decoration: underline;
+            color: inherit;
+        }
+
+        .footer .footer-bottom-line a:hover {
+            text-decoration: none;
+        }
+
+        @media screen {
+            .banner-image img {
+                margin-left: 20px;
+            }
+        }
+
+        @media only screen and (max-device-width: 700px) {
+            .banner-image {
+                display: none;
+            }
+
+            .banner-image-mobi {
+                display: block !important;
+
+            }
+
+            .banner-image-mobi img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .banner-content {
+                width: auto;
+                text-align: center;
+                background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-coin.png") no-repeat no-repeat top 5px right 8px;;
+                background-size: 32%;
+                padding: 20px 15px 0;
+            }
+
+            .button-content {
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-device-width: 600px) {
+            .banner-image {
+                background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-600px.png") no-repeat;
+                background-size: 100%;
+            }
+
+            .content {
+                padding: 20px !important;
+            }
+
+            .header {
+                text-align: center !important;
+            }
+
+            .header-logo-link {
+                padding: 20px 0 0 !important;
+            }
+
+            .header-menu {
+                float: none !important;
+                padding: 0 !important;
+                display: flex !important;
+                margin: 0 !important;
+            }
+
+            .header-item {
+                width: 100% !important;
+                font-size: 14px !important;
+            }
+
+            .header .header-link {
+                height: 58px !important;
+                line-height: 58px !important;
+            }
+
+            .header .header-link-tips {
+                padding-right: 15px !important;
+            }
+
+            .how-to {
+                padding: 20px !important;
+            }
+
+            .how-to-title {
+                font-size: 22px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .what-is {
+                margin: 0 0 20px !important;
+            }
+
+            .what-is-title {
+                font-size: 22px !important;
+            }
+
+            .what-is-table {
+                width: 100% !important;
+                display: block !important;
+                text-align: center !important;
+                margin-top: 22px !important;
+            }
+
+            .what-is-table a {
+                padding: 0 !important;
+                display: inline-block !important;
+                width: 37% !important;
+            }
+
+            .what-is-table img {
+                padding: 0 !important;
+            }
+
+            a.what-is-casino-sites-link {
+                height: 90px;
+                width: 47% !important;
+                margin-right: 4%;
+            }
+
+            .what-is-casino-sites-link img {
+                float: left;
+            }
+
+            a.what-is-betting-tips-link {
+                height: 90px;
+                width: 47% !important;
+            }
+
+            .what-is-betting-tips-link img {
+                float: right;
+            }
+
+            .what-is-try-now-link {
+            }
+
+            .what-is-try-now-link img {
+                margin-top: 20px !important;
+            }
+
+            .last {
+                display: block !important;
+            }
+
+            .last-content {
+                background: none !important;
+                min-width: 222px;
+            }
+
+            .last-button {
+                background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/coin-banner-laptop.png") no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .footer {
+                /*padding: 30px;*/
+                /*margin-top: 0;*/
+            }
+
+            .footer-icons {
+                display: block !important;
+            }
+
+            .footer-left-image {
+                margin-top: 16px !important;
+                margin-right: 0 !important;
+                /* text-align: center !important; */
+                float: none;
+
+            }
+
+            .footer-left-image img {
+                padding-top: 0 !important;
+            }
+
+            .footer-right-images {
+                margin: 0 -1% !important;
+            }
+
+            .footer-right-images img {
+                padding: 1% !important;
+                margin: 0;
+            }
+        }
+
+        @media only screen and (max-device-width: 550px) {
+            .banner-image {
+                display: none;
+            }
+
+            .banner-image-mobi {
+                display: block !important;
+
+            }
+
+            .banner-image-mobi img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .banner-content {
+                max-width: none;
+                text-align: center;
+                background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-coin.png") no-repeat no-repeat top 5px right 8px;;
+                background-size: 32%;
+                padding-bottom: 0;
+            }
+
+            .button-content {
+                margin: 0 auto;
+            }
+
+            .what-is-title {
+                max-width: 215px;
+                margin: 0 auto;
+            }
+
+            .what-is-text {
+                max-width: 260px;
+            }
+
+            .last-image {
+                display: none;
+            }
+
+            .last-content {
+                text-align: center;
+                width: auto;
+                padding: 15px 29px;
+                background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/coin-banner-mobi-3.png") no-repeat top 6px right 9px !important;
+                background-size: 55px !important;
+            }
+
+            .last-content-title {
+                max-width: 165px;
+                margin: 0 auto;
+                font-size: 24px;
+            }
+
+            .last-content-image {
+                display: block !important;
+            }
+
+            .last-button {
+                display: inline-block;
+                float: none;
+                width: 100%;
+                padding: 0;
+                background: url("https://userimg-bee-eu.customeriomail.com/images/client-env-115154/coin-banner-mobi-1.png") no-repeat;
+                background-size: 100px;
+            }
+
+            .last-content-button {
+                width: 122px;
+                margin: 0 auto 40px auto;
+            }
+
+            .banner-button .button-content {
+                margin: 0 auto 0 auto;
+            }
+
+            .footer-right-images img {
+                margin-right: 5px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="root">
+    <div class="content">
+
+        <div class="header-container">
+            <div class="header">
+                <a class="header-logo-link" href="https://www.stakers.com/en/casino/">
+                    <img
+                            class="header-logo"
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/stakers-logo@2x.png"
+                            alt="stakers logo"
+                            width="112"
+                            height="29"
+                    />
+                </a>
+
+                <div class="header-menu">
+                    <div class="header-item"><a class="header-link" href="https://www.stakers.com/en/casino/">casino</a>
+                    </div>
+                    <div class="header-item"><a class="header-link"
+                                                href="https://www.stakers.com/en/bookmaker/">betting</a>
+                    </div>
+                    <div class="header-item"><a class="header-link header-link-tips"
+                                                href="https://www.stakers.com/en/predictions/">tips</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="banner-container"
+           href="https://www.stakers.com/en/casino/t/487/">
+            <div class="banner-image">
+                <img
+                        src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-800px.png"
+                        alt="images"
+                        width="335"
+                        height="264"
+                />
+            </div>
+            <span class="banner-content">
+                <div class="banner-content-image">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/mr-spin.png"
+                            alt="Mr spin"
+                            width="41"
+                            height="31"
+                    />
+                </div>
+                <div class="banner-title">up to 50<br>free spins</div>
+                <div class="banner-text">18+. New Players only. Up to 50 (20p) free spins locked to Reel Royalty. Win paid as bonus credit. 20x wagering requirement. 14 day expiry. £50 Max withdrawal from bonus win. T&Cs apply. BeGambleAware.org</div>
+                <div class="banner-button">
+                    <div class="button-content">Claim bonus</div>
+                </div>
+            </span>
+            <div class="banner-image-mobi">
+                <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-mobi.png" alt="">
+            </div>
+        </a>
+
+        <a class="how-to"
+           href="https://www.stakers.com/en/casino/t/487/">
+            <div class="how-to-title">HOW TO <b>NO DEPOSIT</b> AT MR SPIN</div>
+            <div class="how-to-line how-to-line-top">
+                <div class="how-to-item">
+                    <div class="how-to-item-circle">1</div>
+                    <div class="how-to-item-title" style="margin-left: 15px;">Join Today</div>
+                    <div class="how-to-item-text">
+                        Signup to Get Spinning<br>and Winning
+                    </div>
+                </div>
+                <div class="how-to-item">
+                    <div class="how-to-item-circle">2</div>
+                    <div class="how-to-item-title" style="margin-left: 17px;">Get Bonus</div>
+                    <div class="how-to-item-text">
+                        Receive 20 FS NO DEPOSIT<br>for Reel Royalty
+                    </div>
+                </div>
+                <div class="how-to-item">
+                    <div class="how-to-item-circle">3</div>
+                    <div class="how-to-item-title" style="margin-left: 6px;">Start Playing!</div>
+                    <div class="how-to-item-text">
+                        Continue with 100%<br>Deposit Match
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <div class="what-is">
+            <div class="what-is-title">NEW TO <span>STAKERS</span> CLUB?</div>
+            <div class="what-is-text">Join our community to enjoy the very best in online casino entertainment, 24 hours
+                a day, seven days a week
+            </div>
+
+            <div class="what-is-table">
+                <a href="https://www.stakers.com/en/casino/t/487/"
+                   class="what-is-casino-sites-link">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/casino-sites-en-2.png"
+                            style="padding-top: 11%;"
+                            alt="casino sites"
+                            width="149"
+                            height="140"
+                    />
+                </a>
+
+                <a href="https://www.stakers.com/en/bookmaker/"
+                   class="what-is-betting-tips-link">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/betting-tips-en-2.png"
+                            style="padding-top: 10%;"
+                            alt="betting tips"
+                            width="149"
+                            height="142"
+                    />
+                </a>
+
+                <a href="https://www.stakers.com/en/casino/t/487/"
+                   class="what-is-try-now-link">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/try-now-en-2.png"
+                            alt="try now"
+                            style="padding-top: 11%;"
+                            width="149"
+                            height="140"
+                    />
+                </a>
+            </div>
+        </div>
+
+        <a class="last"
+           href="https://www.stakers.com/en/casino/t/487/">
+            <span class="last-image">
+                <img
+                        src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/mr-spin.png"
+                        alt="Mr spin"
+                        width="77"
+                        height="60"
+                />
+            </span>
+            <span class="last-content">
+                <div class="last-content-title">up to 50 free spins</div>
+                <div class="last-content-image">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/mr-spin.png"
+                            alt="Mr spin"
+                            width="77"
+                            height="60"
+                    />
+                </div>
+                <div class="last-content-text">18+. New Players only. Up to 50 (20p) free spins locked to Reel Royalty. Win paid as bonus credit. 20x wagering requirement. 14 day expiry. £50 Max withdrawal from bonus win. T&Cs apply. BeGambleAware.org</div>
+            </span>
+            <span class="last-button">
+                <div class="button-content last-content-button">Claim Bonus </div>
+            </span>
+        </a>
+
+        <div class="footer">
+            <div class="footer-icons">
+                <a class="footer-left-image" href="https://www.stakers.com/en/">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/stakers-logo@2x.png"
+                            alt="stakers logo"
+                            width="91"
+                            height="23"
+                    />
+                </a>
+
+                <div class="footer-right-images">
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-1@2x.png"
+                            alt=""
+                            width="20"
+                            height="20"
+                    />
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-2@2x.png"
+                            alt=""
+                            width="49"
+                            height="22"
+                    />
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-3@2x.png"
+                            alt=""
+                            width="20"
+                            height="22"
+                    />
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-4@2x.png"
+                            alt=""
+                            width="114"
+                            height="14"
+                    />
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-5@2x.png"
+                            alt=""
+                            width="30"
+                            height="22"
+                    />
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/gamstop.png"
+                            alt=""
+                            width="79"
+                            height="22"
+                    />
+                    <img
+                            src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-7@2x.png"
+                            alt=""
+                            width="121"
+                            height="20s"
+                    />
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-text">
+                    Your email address has been verified and is now on our mailing list to receive regular promotions,
+                    tips and other information. This newsletter and all the deals that are listed on Stakers.com are
+                    related to gambling and are suitable for those at or above the legal age (18+) within the
+                    jurisdictions that allow online gambling.
+                </div>
+            </div>
+            <div style="margin-top: 20px">
+                <div class="footer-title">DISCLAIMER</div>
+                <div class="footer-text">
+                    Certain jurisdictions make online betting illegal. Before playing online, it's your responsibility
+                    to check the local regulations in your area. Stakers.com takes no responsibility for the actions you
+                    take.
+                </div>
+            </div>
+
+            <div class="footer-bottom-line footer-bottom-line-1">
+                <a href="https://www.stakers.com/en/info/help/terms_and_conditions/">Terms and Conditions </a> <span
+                    class="footer-bottom-line-sep">|</span>
+                <a href="https://www.stakers.com/en/info/help/privacy_policy/">Privacy Policy</a>
+                <span class="footer-bottom-line-sep">|</span> <a class="untracked"
+                                                                 href="{% unsubscribe_url %}">Unsubscribe</a>
+            </div>
+
+            <div class="footer-bottom-line footer-bottom-line-2">
+                Have a question? Write to us <a href="mailto:latest@news1.stakers.com">latest@news1.stakers.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

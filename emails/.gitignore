@@ -1,0 +1,4 @@
+.env.local
+inline.html
+node_modules
+.idea

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"/>
+    <title>Document</title>
+    <style>
+        a {
+            font-family: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .root {
+            background: #000000;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .content {
+            max-width: min(800px, 100%);
+            margin: 0 auto;
+            padding: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+            overflow: hidden;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .header {
+            border-radius: 8px;
+            background: #161A20;
+            overflow: hidden;
+        }
+
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .header-logo-link {
+            display: inline-block;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 20px;
+            padding-bottom: 12px;
+        }
+
+        .header-menu {
+            margin-top: 10px;
+            float: right;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .header-item {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 20px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .header .header-link {
+            display: block;
+            line-height: 48px;
+            position: relative;
+            top: 2px;
+            color: #ffffff;
+            height: 48px;
+            padding: 0 5px;
+            transition: all 0.2s;
+        }
+
+        .header .header-link:hover {
+            color: #F6ED05;
+        }
+
+        .header .header-link-tips {
+            padding-right: 35px;
+        }
+
+        .banner-container {
+            display: inline-block;
+            width: 100%;
+            margin: 20px 0;
+            min-height: 370px;
+            background: url('https://userimg-bee-eu.customeriomail.com/images/client-env-115154/banner-bonus-51.png');
+            background-size: cover;
+            background-position: top left;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .banner-image-container {
+            display: inline-block;
+            max-width: 440px;
+            /* margin-top: 31px; */
+            float: right;
+            font-size: 0;
+        }
+
+        .banner-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .banner {
+            display: inline-block;
+            max-width: 350px;
+            /*width: 40.1%;*/
+            /*padding: 18px 1.75% 10px 2.5%;*/
+            padding: 35px 14px 10px 30px;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .banner img {
+            display: block;
+        }
+
+        .banner-title {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 17px;
+            line-height: 112%;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: 0.75;
+            margin-top: 19px;
+        }
+
+        .banner-text {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 120%;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin: 20px 0 15px;
+        }
+
+        .banner-text b {
+            color: #F6ED05;
+        }
+
+        .banner-text b b {
+            color: #F6ED05;
+        }
+
+        .banner .banner-link {
+            width: 130px;
+            display: block;
+            margin-top: 14px;
+        }
+
+        .banner-image-container-mobi {
+            display: none;
+        }
+
+        .banner-extra {
+            display: inline-block;
+            font-family: Segoe UI, sans-serif;
+            font-size: 12px;
+            line-height: 118%;
+            letter-spacing: 0.1px;
+            color: #ffffff;
+            opacity: 0.75;
+            margin-top: 29px;
+        }
+
+        .how-to {
+            display: inline-block;
+            background: #161A20;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 30px 0px 15px;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .how-to-title {
+            display: block;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 36px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            max-width: 560px;
+            margin-bottom: 15px;
+            margin: auto;
+        }
+
+        .how-to-title b {
+            color: #F6ED05;
+            text-decoration: underline;
+        }
+
+        .how-to-line {
+            text-align: center;
+        }
+
+        .how-to-line-bottom {
+            width: 84%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20%;
+        }
+
+        .how-to-text span {
+            padding-top: 1%;
+        }
+
+        .how-to-text-4 span,
+        .how-to-text-5 span {
+            padding-top: 5%;
+        }
+
+        .how-to-title br {
+            display: none;
+        }
+
+        .how-to-text {
+            vertical-align: top;
+            font-family: Segoe UI, sans-serif;
+            color: #ffffff;
+            padding: 15px 20px;
+            display: inline-block;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 130%;
+        }
+
+        .how-to-text-1 {
+            width: clamp(150px, 71%, 190px);
+        }
+
+        .how-to-text-2 {
+            width: clamp(220px, 30%, 220px);
+        }
+
+        .how-to-text-3 {
+            width: clamp(210px, 25%, 190px);
+        }
+
+        .how-to-text-4 {
+            width: clamp(150px, 50%, 220px);
+        }
+
+        .how-to-text-5 {
+            width: clamp(120px, 58%, 215px);
+        }
+
+        .how-to-text b {
+            text-decoration: underline;
+            color: #F6ED05;
+        }
+
+        .what-is {
+            margin: 50px 0 27px;
+        }
+
+        .what-is-title {
+            font-style: normal;
+            font-weight: 800;
+            font-size: 28px;
+            line-height: 112%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .what-is-title br {
+            display: none;
+        }
+
+        .what-is-title b {
+            color: #F6ED05;
+            text-decoration: underline;
+        }
+
+        .what-is-text {
+            font-family: Segoe UI, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 130%;
+            text-align: center;
+            color: #ffffff;
+            opacity: 0.8;
+            max-width: 390px;
+            margin: 8px auto 0;
+        }
+
+        .what-is-table {
+            display: flex;
+            margin: 5px auto 0;
+        }
+
+        .what-is-try-now-link {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+
+        .what-is-casino-sites-link {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+
+        a.what-is-betting-tips-link {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+
+        .what-is-table img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .last {
+            display: block;
+            background: #161A20;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .last-column {
+            display: block;
+            padding: 21px 28px 21px 28px;
+        }
+
+        .last-column br {
+            display: none;
+        }
+
+        .last-column-left {
+            /* max-width: max(calc(100% - 360px), 300px); */
+            width: 400px;
+            float: left;
+            padding: 42px 20px;
+        }
+
+        .last-column-right {
+            text-align: center;
+            display: inline-block;
+            float: right;
+        }
+
+        .last-column-right img {
+            display: block;
+            margin-top: 13px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .last-title {
+            font-style: normal;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: #ffffff;
+            max-width: 60%;
+            display: block;
+        }
+
+        .last-title br {
+            display: block;
+        }
+
+        .last-title b {
+            color: #F6ED05;
+            text-decoration: underline;
+        }
+
+        .last-title b b {
+            color: #F6ED05;
+            text-decoration: underline;
+        }
+
+        .last-subtitle {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #ffffff;
+        }
+
+        .last-subtitle b {
+            text-decoration: underline;
+            color: #F6ED05;
+        }
+
+        .last-text {
+            display: block;
+            font-family: Segoe UI, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.1px;
+            color: #a7a7a7;
+            margin-top: 33px;
+        }
+
+        .last .last-link {
+            width: 130px;
+            margin-top: 9px;
+        }
+
+        .footer {
+            color: rgba(255, 255, 255, 0.4);
+            font-family: Segoe UI, sans-serif;
+            margin-top: 27px;
+            font-size: 13px;
+        }
+
+        .footer-icons {
+            margin-bottom: 25px;
+        }
+
+        .footer-left-image {
+            float: left;
+            flex-shrink: 0;
+            margin-right: 14px;
+        }
+
+        .footer-left-image img {
+            padding-top: 17%;
+        }
+
+        .footer-right-images {
+            opacity: 0.5;
+            width: 100%;
+        }
+
+        .footer-right-images img {
+            margin: 2% 0 0 2%;
+            vertical-align: middle;
+        }
+
+        .footer-title {
+            font-style: normal;
+            font-weight: bold;
+            line-height: 17px;
+            text-transform: uppercase;
+            color: #ffffff;
+            opacity: 0.4;
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 18px;
+            color: #ffffff;
+            opacity: 0.4;
+        }
+
+        .footer-bottom-line {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-bottom-line-2 {
+            margin-top: 12px;
+        }
+
+        .footer-bottom-line-sep {
+            margin: 0 10px;
+        }
+
+        .footer .footer-bottom-line a {
+            text-decoration: underline;
+            color: inherit;
+        }
+
+        .footer .footer-bottom-line a:hover {
+            text-decoration: none;
+        }
+
+        @media screen {
+            .header .header-link {
+                padding: 0 15px !important;
+            }
+
+            .last-column-right {
+                background: #1C2127;
+                float: right;
+            }
+        }
+
+        @media only screen and (max-device-width: 750px) {
+            br {
+                display: none;
+            }
+
+            .content {
+                padding: 20px !important;
+            }
+
+            .header {
+                text-align: center !important;
+            }
+
+            .header-logo-link {
+                padding: 20px 0 0 !important;
+            }
+
+            .header-menu {
+                float: none !important;
+                padding: 0 !important;
+                display: flex !important;
+                margin: 0 !important;
+            }
+
+            .header-item {
+                width: 100% !important;
+                font-size: 14px !important;
+            }
+
+            .header .header-link {
+                height: 58px !important;
+                line-height: 58px !important;
+            }
+
+            .header .header-link-tips {
+                padding-right: 15px !important;
+            }
+
+            .banner-container {
+                background: url('https://userimg-bee-eu.customeriomail.com/images/client-env-115154/bannerMob-bonus-51.png');
+                background-size: cover;
+                min-height: 450px !important;
+                background-position: 45%;
+            }
+
+            .banner {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 auto !important;
+                display: block !important;
+                text-align: center !important;
+                padding: 20px 14px 0px 14px !important;
+            }
+
+            .banner img {
+                margin: 0 auto !important;
+            }
+
+            .banner-text {
+                font-size: 27px !important;
+                max-width: 400px !important;
+            }
+
+            .banner-text br {
+                display: block;
+            }
+
+            .banner .banner-link {
+                margin: 0px auto 0px auto !important;
+            }
+
+            .banner-extra {
+                margin-top: 15px !important;
+            }
+
+            .banner-image-container {
+                margin-top: 0 !important;
+            }
+
+            .banner-image-container-mobi {
+                display: block !important;
+                margin: 0 auto !important;
+                float: none !important;
+                width: 80% !important;
+            }
+
+            .banner-image-container-web {
+                display: none !important;
+            }
+
+            .banner-mobi-image {
+                display: block !important;
+                max-width: 100% !important;
+                font-size: 0 !important;
+            }
+
+            .how-to {
+                padding: 20px 15px !important;
+                width: 100% !important;
+            }
+
+            .how-to-title {
+                font-size: 22px !important;
+                margin-bottom: 5px !important;
+            }
+
+            .how-to-title br {
+                display: block;
+            }
+
+            .how-to-text {
+                display: block !important;
+                margin: 0 auto !important;
+                padding: 30px 0 0 !important;
+                font-size: 14px;
+                width: 98%;
+                line-height: 1.4;
+            }
+
+            .how-to-text br {
+                display: block;
+            }
+
+            .how-to-text-4,
+            .how-to-text-5 {
+                margin-top: 14px !important;
+            }
+
+            .how-to-text span {
+                padding-top: 5% !important;
+            }
+
+            .how-to-text-4 span,
+            .how-to-text-5 span {
+                padding-top: 7% !important;
+            }
+
+            .what-is {
+                margin: 30px 0 20px !important;
+            }
+
+            .what-is-title {
+                font-size: 22px !important;
+            }
+
+            .what-is-title br {
+                display: block;
+            }
+
+            .what-is-table {
+                width: 100% !important;
+                display: block !important;
+                text-align: center !important;
+                margin-top: 25px !important;
+            }
+
+            .what-is-table a {
+                padding: 0 !important;
+                display: inline-block !important;
+                width: 37% !important;
+            }
+
+            .what-is-table img {
+                padding: 0 !important;
+            }
+
+            a.what-is-casino-sites-link {
+                height: 90px;
+                width: 47% !important;
+                margin-right: 4%;
+            }
+
+            .what-is-casino-sites-link img {
+                float: left;
+            }
+
+            a.what-is-betting-tips-link {
+                height: 90px;
+                width: 47% !important;
+            }
+
+            .what-is-betting-tips-link img {
+                float: right;
+            }
+
+            .what-is-try-now-link img {
+                margin-top: 0 !important;
+            }
+
+            .last {
+                display: block !important;
+            }
+
+            .last-title {
+                font-size: 22px !important;
+                max-width: none !important;
+                text-align: center;
+                margin-right: 0;
+            }
+
+            .last-title br {
+                display: block;
+            }
+
+            .last-column {
+                display: block !important;
+                padding: 15px !important;
+                max-width: none !important;
+                float: none !important;
+            }
+
+            .last-column-left {
+                width: auto;
+            }
+
+            .last-column br {
+                display: block;
+            }
+
+            .last-column-right {
+                overflow: hidden !important;
+                text-align: left !important;
+                padding: 5px 15px 20px !important;
+                background: none !important;
+            }
+
+            .last-column-right img {
+                margin-top: 0 !important;
+            }
+
+            .last-text {
+                margin-top: 10px !important;
+            }
+
+            .last-text br {
+                display: none !important;
+            }
+
+            .last .last-link {
+                margin: 0 auto !important;
+            }
+
+            .last-subtitle {
+                text-align: center;
+                display: block;
+            }
+
+            .footer-icons {
+                display: block !important;
+            }
+
+            .footer-left-image {
+                margin-top: 16px !important;
+                margin-right: 0 !important;
+                /* text-align: center !important; */
+                float: none;
+            }
+
+            .footer-left-image img {
+                padding-top: 0 !important;
+            }
+
+            .footer-right-images {
+                margin: 0 -1% !important;
+            }
+
+            .footer-right-images img {
+                padding: 1% !important;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="root">
+    <div class="content">
+        <div class="header-container">
+            <div class="header">
+                <a class="header-logo-link" href="https://www.stakers.com/en/casino/">
+                    <img class="header-logo" src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/stakers-bonus-51.png" alt="stakers logo" width="90" height="22"/>
+                </a>
+                <div class="header-menu">
+                    <div class="header-item">
+                        <a class="header-link" href="https://www.stakers.com/en/casino/">CASINO</a>
+                    </div>
+                    <div class="header-item">
+                        <a class="header-link" href="https://www.stakers.com/en/bookmaker/">bETTING</a>
+                    </div>
+                    <div class="header-item">
+                        <a class="header-link header-link-tips" href="https://www.stakers.com/en/predictions/">TIPS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="banner-container" href="https://www.stakers.com/en/casino/t/926/">
+            <span class="banner">
+                <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/logo-bonus-51.png" alt="Slotty Way" width="67" height="40"/>
+                <span class="banner-text">Take your gift<br>60 FS for<br>Registration</span>
+                <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/btn-bonus-51.png" alt="Claim Bonus" class="banner-link" width="130" height="45" />
+            </span>
+        </a>
+        <a class="how-to" href="https://www.stakers.com/en/casino/t/926/">
+            <span class="how-to-title">HOW TO JOIN AND <br>PLAY AT <b>SLOTTYWAY</b>?</span>
+            <span class="how-to-line how-to-line-top">
+                <span class="how-to-text how-to-text-1">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/num-1-bonus-51.png" alt="num-1-bonus" width="35" height="35"/>
+                    <div>Start your Slottyway with 60<br>FS <b>FOR FREE</b></div>
+                </span>
+                <span class="how-to-text how-to-text-2">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/num-2-bonus-51.png" alt="num-2-bonus" width="35" height="35"/>
+                    <div>Get a bonus of up to<br><b>€1,000 on your First Deposit</b></div>
+                </span>
+                <span class="how-to-text how-to-text-3">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/num-3-bonus-51.png" alt="num-3-bonus" width="35" height="35"/>
+                    <div>Spin the Wheel of Fortune and<br>get <b>even more Free Spins</b></div>
+                </span>
+                <span class="how-to-text how-to-text-4">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/num-4-bonus-51.png" alt="num-4-bonus" width="35" height="35"/>
+                    <div>Take part in Exciting <b>Tournaments<br>with Generous Prizes</b></div>
+                </span>
+                <span class="how-to-text how-to-text-5">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/num-5-bonus-51.png" alt="num-5-bonus" width="35" height="35"/>
+                    <div>Enjoy the excellent <b><br>Collection of Live Dealer Games</b></div>
+                </span>
+            </span>
+        </a>
+        <div class="what-is">
+            <div class="what-is-title">new to <b><br>STAKERS</b> CLUB?</div>
+            <div class="what-is-text">Join our community to enjoy the very best in online casino entertainment, 24 hours a day, seven days a week</div>
+            <div class="what-is-table">
+                <a href="https://www.stakers.com/en/casino/t/926/" class="what-is-casino-sites-link">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/advantage-1-bonus-51.png" style="padding-top: 12%" alt="casino sites" width="130" height="85"/>
+                </a>
+                <a href="https://www.stakers.com/en/bookmaker/" class="what-is-betting-tips-link">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/advantage-2-bonus-51.png" style="padding-top: 12%" alt="betting tips" width="130" height="85"/>
+                </a>
+                <a href="https://www.stakers.com/en/casino/t/926/" class="what-is-try-now-link">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/advantage-3-bonus-51.png" style="padding-top: 11%" alt="try now" width="130" height="85"/>
+                </a>
+            </div>
+        </div>
+        <a class="last" href="https://www.stakers.com/en/casino/t/926/">
+            <span class="last-column last-column-left">
+                <span class="last-title">Take your gift <br><b>60 FS</b> for <br>Registration</span>
+            </span>
+            <span class="last-column last-column-right">
+                <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/logo-bonus-51.png" alt="Slotty Way" width="65" height="40"/>
+                <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/btn-bonus-51.png" alt="Claim Bonus" class="last-link" width="130" height="45" />
+            </span>
+        </a>
+
+        <div class="footer">
+            <div class="footer-icons">
+                <a class="footer-left-image" href="https://www.stakers.com/en/">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/stakers-bonus-51.png" alt="stakers logo" width="91" height="23"/>
+                </a>
+                <div class="footer-right-images">
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-1@2x.png" alt="footer-icon-1" width="28" height="28"/>
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-2@2x.png" alt="footer-icon-2" width="66" height="27"/>
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-3@2x.png" alt="footer-icon-3" width="27" height="30"/>
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-4@2x.png" alt="footer-icon-4" width="147" height="20"/>
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-5@2x.png" alt="footer-icon-5" width="42" height="26"/>
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/gamstop.png" alt="footer-icon-6" width="101" height="26"/>
+                    <img src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/footer-icon-7@2x.png" alt="footer-icon-7" width="149" height="21"/>
+                </div>
+            </div>
+            <div>
+                <div class="footer-text">Your email address has been verified and is now on our mailing list to receive regular promotions, tips and other information. This newsletter and all the deals that are listed on Stakers.com are related to gambling and are suitable for those at or above the legal age (18+) within the jurisdictions that allow online gambling.</div>
+            </div>
+            <div style="margin-top: 20px">
+                <div class="footer-title">DISCLAIMER</div>
+                <div class="footer-text">
+                    Certain jurisdictions make online betting illegal. Before playing online, it's your responsibility to check the local regulations in your area. Stakers.com takes no responsibility for the actions you take.
+                </div>
+            </div>
+            <div class="footer-bottom-line footer-bottom-line-1">
+                <a href="https://www.stakers.com/en/info/help/terms_and_conditions/">Terms and Conditions</a>
+                <span class="footer-bottom-line-sep">|</span>
+                <a href="https://www.stakers.com/en/info/help/privacy_policy/">Privacy Policy</a>
+                <span class="footer-bottom-line-sep">|</span>
+                <a class="untracked" href="{% unsubscribe_url %}">Unsubscribe</a>
+            </div>
+            <div class="footer-bottom-line footer-bottom-line-2">
+                Have a question? Write to us
+                <a href="mailto:support@stakers.com">support@stakers.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

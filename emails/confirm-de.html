@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mail-background {
+            color: #222;
+        }
+        @media screen and (max-width: 500px) {
+            .confirm-email-content {
+                width: 100% !important;
+            }
+
+            .logo {
+                height: 40px !important;
+            }
+
+            .header {
+                height: 40px !important;
+            }
+
+            .mail-background {
+                height: auto !important
+            }
+        }
+
+        .button:hover {
+            background: #23796a !important;
+        }
+
+        .support a:hover {
+            text-decoration-line: none !important;
+        }
+
+    </style>
+</head>
+<body>
+<table style="width: 100%; border: 0;" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="mail-background"
+            style="background: #F0F0F0;width: 100%;height: 600px;font-style: normal;font-weight: normal;">
+            <div class="confirm-email-content" style="
+                background: #FFFFFF;
+                width: min(800px, 100%);
+                text-align: center;
+                margin: auto;">
+                <div class="header" style="
+                    padding: 13px 15px 12px 15px;
+                    background: #282928;
+                    height: 50px;
+                    text-align: left;">
+                    <div class="logo" style="display: table-cell; vertical-align: middle;height: 50px;">
+                        <img width="113" height="29"
+                             src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/stakers-logo@2x.png"
+                             alt="logo">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="image" style="margin: 26px 0px 10px 0px;">
+                        <img width="84" height="84"
+                             src="https://userimg-bee-eu.customeriomail.com/images/client-env-115154/email@2.png"
+                             alt="email">
+                    </div>
+                    <div class="title" style="font-weight: bold;
+                        font-size: 29px;
+                        line-height: 112%;
+                        margin-bottom: 8px;">Bestätigen Sie Ihre E-Mail-Adresse
+                    </div>
+                    <div class="text" style="
+                        font-size: 15px;
+                        line-height: 140%;
+                        max-width: 70%;
+                        margin: 0 auto;">
+                        Vielen Dank, dass Sie sich für Stakers.com angemeldet haben. Bitte bestätigen Sie Ihre E-Mail-Adresse {{customer.email}}, indem Sie auf die Schaltfläche unten klicken.
+                    </div>
+                    <a class="button" href="https://stakers.com/en/thank_you/"
+                       style="background: #258473;
+                            border-radius: 3px;
+                            text-transform: uppercase;
+                            display: block;
+                            color: #FFFFFF;
+                            font-weight: bold;
+                            font-size: 16px;
+                            line-height: 22px;
+                            border: 1px solid #258473;
+                            box-sizing: border-box;
+                            padding: 17px 0 19px 0;
+                            margin: 22px auto 42px auto;
+                            text-decoration: none;
+                            max-width: 225px;">E-MAIL BESTÄTIGEN</a>
+                </div>
+                <div class="footer" style="border-top: 1px solid #F0F0F0; margin: 0px 15px;">
+                    <p style="font-size: 14px;
+                        line-height: 140%;
+                        max-width: 382px;
+                        text-align: center;
+                        color: #888888;
+                        margin: 14px auto 18px auto">Wenn Sie sich für dieses Abonnement nicht angemeldet haben, können Sie diese Nachricht ignorieren und Ihr Konto wird gelöscht.</p>
+                </div>
+                <div class="support" style="
+                    background: #F0F0F0;
+                    padding: 20px;">
+                    <p style="font-size: 14px;
+                        line-height: 21px;
+                        margin: 0;
+                        color: #888888;">Haben Sie eine Frage? Schreiben Sie uns unter <span><a style="color: #888888;"
+                                                                               href="mailto:latest@news1.stakers.com">latest@news1.stakers.com</a></span><span
+                            style="margin: 0 13px;
+                    color: #888888;">|</span> <span><a href="{% unsubscribe_url %}"
+                                                       style="text-decoration-line: underline;color: #888888;">Abbestellen</a></span>
+                    </p>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        a {
+            font-family: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .root {
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676381303360_bg-78_01GS81SCKQRYFD4MKX9NGFAP2S.png');
+            font-family: "Roboto", sans-serif;
+        }
+        
+        .content {
+            max-width: min(800px, 100%);
+            margin: 0 auto;
+            padding: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+            overflow: hidden;
+            font-family: "Roboto", sans-serif;
+        }
+        
+        .header {
+            border-radius: 8px;
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676381305294_block-78_01GS81SEJGRBHTG30J9AR9VWDP.png');
+            overflow: hidden;
+        }
+        
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .header-logo-link {
+            display: inline-block;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 20px;
+            padding-bottom: 12px;
+        }
+        
+        .header-menu {
+            margin-top: 23px;
+            float: right;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        .header-item {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 20px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        
+        .header .header-link {
+            display: block;
+            position: relative;
+            top: 2px;
+            color: #ffffff;
+            padding: 0 5px;
+            transition: all 0.2s;
+            height: 14px;
+        }
+        
+        .header .header-link img {
+            height: 100%;
+            width: auto;
+        }
+        
+        .header .header-link-tips {
+            padding-right: 35px;
+        }
+        
+        .banner-container {
+            display: inline-block;
+            width: 100%;
+            margin: 20px 0;
+            min-height: 375px;
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676453300854_desk-banner-block-78-de--v2_01GSA6EJPGDKWY92K808VA3W6H.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .how-to {
+            display: inline-block;
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382959451_how-to-block-78-de_01GS83BXRDRCCT0Y20C6YP1NAW.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 30px 0px 15px;
+            min-height: 455px;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .what-is {
+            margin: 50px 0 27px;
+        }
+        
+        .what-is-info {
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382957619_info-block-78-de_01GS83BVZ6HPR8K6W9GS7VW82N.png');
+            background-size: cover;
+            min-height: 85px;
+            width: 100%;
+            max-width: 435px;
+            margin: auto;
+        }
+        
+        .what-is-table {
+            display: flex;
+            margin: 5px auto 0;
+        }
+        
+        .what-is-try-now-link {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+        
+        .what-is-casino-sites-link {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+        
+        a.what-is-betting-tips-link {
+            display: block;
+            text-align: center;
+            width: calc(100% / 3);
+            padding: 0 10px;
+        }
+        
+        .what-is-table img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .last {
+            display: block;
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382955866_last-block-78-de_01GS83BT8G0NMZ035C3KVPWR7C.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 165px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .footer {
+            color: rgba(255, 255, 255, 0.4);
+            font-family: Segoe UI, sans-serif;
+            margin-top: 27px;
+            font-size: 13px;
+        }
+        
+        .footer-top {
+            background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382971939_footer-block-78-de_01GS83C9YRSW4CSHBHA823KH8E.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 280px;
+        }
+        
+        .footer-bottom-line {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .footer-bottom-line-2 {
+            margin-top: 12px;
+        }
+        
+        .footer .footer-bottom-line a {
+            display: inline-block;
+            margin: 0;
+        }
+        
+        .footer .footer-bottom-line-1 a {
+            margin: 0 10px;
+        }
+        
+        .footer .footer-bottom-line a img {
+            display: block;
+            height: 100%;
+            width: auto;
+            height: 24px;
+        }
+        
+        @media screen {
+            .header .header-link {
+                padding: 0 15px !important;
+            }
+        }
+        
+        @media only screen and (max-device-width: 750px) {
+            .content {
+                max-width: min(320px, 100%);
+                padding: 20px 0 0 !important;
+            }
+            .header {
+                text-align: center !important;
+                min-height: 90px !important;
+            }
+            .header-logo-link {
+                padding: 20px 0 0 !important;
+            }
+            .header-menu {
+                float: none !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                display: flex !important;
+                margin: 10px auto 20px !important;
+            }
+            .header-item {
+                width: 100% !important;
+                font-size: 14px !important;
+            }
+            .header .header-link {
+                height: 10px !important;
+                line-height: 1 !important;
+                padding: 0 5px !important;
+            }
+            .header .header-link-tips {
+                padding-right: 15px !important;
+            }
+            .banner-container {
+                background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676453270744_mob-banner-block-78-de--v2_01GSA6DN49FZB48AK57S1KP9AK.png');
+                background-size: cover;
+                background-position: top;
+                min-height: 520px !important;
+            }
+            .how-to {
+                background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382946882_mob-how-to-78-de_01GS83BHFQBVPWZN74TK0J9SAE.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height: 860px;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .what-is {
+                margin: 30px 0 20px !important;
+            }
+            .what-is-info {
+                background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382945152_mob-info-78-de_01GS83BFSVMQ8PPP6MHMVW1FVD.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height: 125px;
+                max-width: 250px;
+            }
+            .what-is-table {
+                width: 100% !important;
+                display: block !important;
+                text-align: center !important;
+                margin-top: 25px !important;
+            }
+            .what-is-table a {
+                padding: 0 !important;
+                display: inline-block !important;
+                width: 37% !important;
+            }
+            .what-is-table img {
+                padding: 0 !important;
+            }
+            a.what-is-casino-sites-link {
+                height: 90px;
+                width: 47% !important;
+                margin-right: 4%;
+            }
+            .what-is-casino-sites-link img {
+                float: left;
+            }
+            a.what-is-betting-tips-link {
+                height: 90px;
+                width: 47% !important;
+            }
+            .what-is-betting-tips-link img {
+                float: right;
+            }
+            .what-is-try-now-link img {
+                margin-top: 0 !important;
+            }
+            .last {
+                display: block !important;
+                background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382942390_mob-last-78-de_01GS83BDJE81M7EAVFV7VNEG67.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height: 295px;
+            }
+            .footer {
+                padding: 0 5px 20px;
+            }
+            .footer-top {
+                background: url('https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382962886_mob-footer-78-de_01GS83C13TGNJBCXGNEM72WT1J.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height: 460px;
+            }
+            .footer-bottom-line-sep {
+                display: none;
+                top: -3px;
+            }
+            .footer .footer-bottom-line a {
+                display: block;
+            }
+            .footer .footer-bottom-line a img {
+                height: 18px;
+                margin: 0 auto;
+            }
+            .footer .footer-bottom-line-2 a img {
+                height: 14px;
+                margin: 0 auto;
+            }
+            .footer .footer-bottom-line .privacy img {
+                height: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="content">
+            <div class="header-container">
+                <div class="header">
+                    <a class="header-logo-link" href="https://www.stakers.com/de/casino/">
+                        <img class="header-logo" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676381943756_logo-78_01GS82CYRJB3JEVV1DDAPY85N3.png" alt="stakers logo" width="112" height="29" />
+                    </a>
+                    <div class="header-menu">
+                        <div class="header-item">
+                            <a class="header-link" href="https://www.stakers.com/de/casino/">
+                                <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1672991667993_menu-casino-de_01GP315YBYAPVFSH8DGKJJ71AA.png" alt="casion">
+                            </a>
+                        </div>
+                        <div class="header-item">
+                            <a class="header-link" href="https://www.stakers.com/de/bookmaker/">
+                                <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1672991665717_menu-sportwetten-de_01GP315W4W0P2V40Q93GKRB6H0.png" alt="SPORTWETTEN">
+                            </a>
+                        </div>
+                        <div class="header-item">
+                            <a class="header-link header-link-tips" href="https://www.stakers.com/de/predictions/">
+                                <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1672991663537_menu-tipps-de_01GP315T92F5572W6A458CTDYB.png" alt="TIPPS">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="banner-container" href="https://www.stakers.com/de/casino/t/1939/">
+            </a>
+            <a class="how-to" href="https://www.stakers.com/de/casino/t/1939/">
+            </a>
+
+            <div class="what-is">
+                <div class="what-is-info"></div>
+                <div class="what-is-table">
+                    <a href="https://www.stakers.com/de/casino/t/1939/" class="what-is-casino-sites-link">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382954118_seiten-78_01GS83BRHRNC9E0XQQ8F3BPSXN.png" style="padding-top: 12%" alt="casino sites" width="160" height="72" />
+                    </a>
+                    <a href="https://www.stakers.com/de/bookmaker/" class="what-is-betting-tips-link">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382952352_wett-78_01GS83BPTG52NB7QXBM5CBQKS2.png" style="padding-top: 12%" alt="betting tips" width="160" height="72" />
+                    </a>
+                    <a href="https://www.stakers.com/de/casino/t/1939/" class="what-is-try-now-link">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382950618_testen-78_01GS83BN4AV08NA89J4C27QTX7.png" style="padding-top: 11%" alt="try now" width="160" height="72" />
+                    </a>
+                </div>
+            </div>
+
+            <a class="last" href="https://www.stakers.com/de/casino/t/1939/">
+            </a>
+
+            <div class="footer">
+                <div class="footer-top"></div>
+                <div class="footer-bottom-line footer-bottom-line-1">
+                    <a href="https://www.stakers.com/de/info/help/terms_and_conditions/">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382970204_terms-n-conditions-78-de_01GS83C88ABF3SA71WKV15BER4.png" alt="Allgemeine Geschäftsbedingungen">
+                    </a>
+                    <a href="https://www.stakers.com/de/info/help/privacy_policy/">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382968358_privaty-policy-78-de_01GS83C6F16K5MRXE3VDRR5NGX.png" alt="Datenschutzerklärung">
+                    </a>
+                    <a class="untracked" href="{% unsubscribe_url %}">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382966385_unsubscribe-78-de_01GS83C4QF06CT25X2Y6AWA1PS.png" alt="Abmelden">
+                    </a>
+                </div>
+                <div class="footer-bottom-line footer-bottom-line-2">
+                    <a href="mailto:support@stakers.com">
+                        <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1676382964668_email-78-de_01GS83C2VCHKBN7GYJPEV0S78A.png" alt="support@stakers.com">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
