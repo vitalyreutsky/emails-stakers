@@ -1,1142 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-    <style>
-      a {
-        font-family: inherit;
-        text-decoration: none;
-        color: inherit;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      font-family: inherit;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    .container {
+      border-radius: 15px;
+      margin: 0 auto;
+      max-width: 612px;
+      padding: 20px 50px 30px;
+    }
+
+    .desktop-img {
+      width: 100%;
+    }
+
+    /*header*/
+
+    .header {
+      border-radius: 10px;
+      padding: 16px 20px 11px;
+      margin-bottom: 13px;
+    }
+
+    .header__logo {
+      display: inline-block;
+      width: 90px;
+      height: 22px;
+    }
+
+    .header__logo_img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .header__nav {
+      float: right;
+      margin-top: 2px;
+    }
+
+    .header__nav_link {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      text-transform: uppercase;
+    }
+
+    .header__nav_link:nth-child(even) {
+      margin: 0 30px;
+    }
+
+    /*banner*/
+
+    .banner {
+      border-radius: 10px;
+      height: 288px;
+      box-sizing: border-box;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .banner__img {
+      width: 100%;
+    }
+
+    /* steps */
+    .steps {
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    /* inform */
+
+    .inform {
+      margin-bottom: 30px;
+    }
+
+    .inform__text {
+      max-width: 336px;
+      margin: 0 auto 26px;
+    }
+
+    .inform__wrapper {
+      display: flex;
+      margin: 0 68px;
+    }
+
+    .inform__logo {
+      width: auto;
+      height: 83px;
+    }
+
+    .inform__logo:nth-child(even) {
+      margin: 0 100px;
+    }
+
+    .inform__logo_img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* bottom-banner */
+    .bottom-banner {
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    /* footer */
+
+    .footer {}
+
+    .footer__wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .footer__col {}
+
+    .footer__col.col-left {}
+
+    .footer__col.col-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer__logo {
+      margin-right: 15px;
+    }
+
+    .footer__logo.main {
+      display: block;
+    }
+
+    .footer__logo:last-child {
+      margin-right: 0;
+    }
+
+    .footer__col.col-right {
+      margin-left: 19px !important;
+    }
+
+    .footer__logo_img {}
+
+    .footer__text {
+      margin-bottom: 20px;
+    }
+
+    .footer__title {
+      font-family: 'Open Sans', sans-serif;
+      margin: 20px 0 10px;
+      font-weight: 600;
+      line-height: 130%;
+      text-transform: uppercase;
+    }
+
+    .footer__links {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .footer__separator {
+      margin: 0 10px;
+    }
+
+    .footer__bottom {
+      text-align: center;
+    }
+
+    /* consts */
+
+    .text {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    .text-underline {
+      text-decoration-line: underline;
+    }
+
+    /* colors consts */
+
+    .white-text {
+      color: #fff;
+    }
+
+    .footer-gray {
+      color: #867574;
+    }
+
+    .bg-body {
+      background-color: #230503;
+    }
+
+    .bg-dark {
+      background-color: #4F2724;
+    }
+
+    @media only screen and (max-device-width: 750px) {
+      .container {
+        border-radius: 15px  !important;
+        margin: 0 auto  !important;
+        max-width: 280px  !important;
+        padding: 20px 20px 30px  !important;
       }
 
-      ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+      .desktop-img {
+        display: none !important;
       }
 
-      .root {
-        background: #230503;
-        font-family: "Roboto", sans-serif;
-      }
-
-      .content {
-        max-width: min(800px, 100%);
-        margin: 0 auto;
-        padding: 30px;
-        font-size: 16px;
-        line-height: 1.5;
-        overflow: hidden;
-        font-family: "Roboto", sans-serif;
-      }
+      /* header */
 
       .header {
-        background: #4f2724;
-        border-radius: 10px;
-        overflow: hidden;
+        padding: 20px 40px  !important;
       }
 
-      .header:after {
-        content: "";
-        display: table;
-        clear: both;
+      .header__logo {
+        width: 100%  !important;
+        display: flex  !important;
+        margin-bottom: 20px  !important;
       }
 
-      .header-logo-link {
-        display: inline-block;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 20px;
-        padding-bottom: 12px;
+      .header__logo_img {
+        width: 92px  !important;
+        margin: 0 auto  !important;
       }
 
-      .header-menu {
-        margin-top: 10px;
-        float: right;
-        overflow: hidden;
-        margin-left: 10px;
+      .header__nav {
+        margin-top: 0  !important;
+        float: none  !important;
       }
 
-      .header-item {
-        display: inline-block;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 20px;
-        text-transform: uppercase;
-        transition: all 0.2s;
+      .header__nav_link {
+        font-weight: 700  !important;
       }
 
-      .header .header-link {
-        display: block;
-        line-height: 48px;
-        position: relative;
-        top: 2px;
-        color: #ffffff;
-        height: 48px;
-        padding: 0 5px;
-        transition: all 0.2s;
-      }
-
-      .header .header-link:hover {
-        color: #ffb800;
-      }
-
-      .header .header-link-tips {
-        padding-right: 35px;
-      }
-
-      .banner-container {
-        display: inline-block;
-        width: 100%;
-        margin: 20px 0;
-        min-height: 333px;
-        background: url("https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/banner-bg-bonus-30.png?raw=true")
-          no-repeat;
-        background-size: cover;
-        background-position: top left;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-
-      .banner-image-container {
-        display: inline-block;
-        max-width: 405px;
-        margin-top: 31px;
-        float: right;
-        font-size: 0;
-      }
-
-      .banner-image-container-mobi {
-        display: none;
-      }
-
-      .banner-image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+      /* banner */
 
       .banner {
-        display: inline-block;
-        max-width: 380px;
-        /*width: 40.1%;*/
-        /*padding: 18px 1.75% 10px 2.5%;*/
-        padding: 35px 14px 10px 30px;
-        float: left;
-        box-sizing: border-box;
-      }
-
-      .banner img {
-        display: block;
-      }
-
-      .banner-title {
-        display: inline-block;
-        font-style: normal;
-        font-weight: 800;
-        font-size: 17px;
-        line-height: 112%;
-        text-transform: uppercase;
-        color: #fff;
-        opacity: 0.75;
-        margin-top: 19px;
-      }
-
-      .banner-text {
-        display: inline-block;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 36px;
-        line-height: 120%;
-        text-transform: uppercase;
-        color: #ffffff;
-        margin: 10px 0 11px;
-      }
-
-      .banner-text b {
-        color: #ffb800;
-      }
-
-      .banner-text b b {
-        color: #ffb800;
-      }
-
-      .banner .banner-link {
-        background: #ffb800;
-        border-radius: 5px;
-        width: 160px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: block;
-        text-align: center;
-        color: #290401;
-        transition: all 0.2s;
-        padding: 16px 18px;
-        box-sizing: border-box;
-        margin-top: 14px;
-      }
-
-      .banner .banner-link:hover {
-        background-color: #ce2e39;
-      }
-
-      .banner-extra {
-        display: inline-block;
-        font-size: 12px;
-        line-height: 118%;
-        letter-spacing: 0.1px;
-        color: #ffffff;
-        opacity: 0.75;
-        margin-top: 29px;
-      }
-      .banner-extra-mobi {
-        display: none;
-      }
-
-      .how-to {
-        display: inline-block;
-        background: #4f2724;
-        border-radius: 10px;
-        overflow: hidden;
-        padding: 30px 4px 15px;
-        color: #fff;
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-      }
-
-      .how-to-title {
-        display: block;
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 36px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #ffffff;
-        margin-bottom: 15px;
-        margin: auto;
-        max-width: 410px;
-      }
-
-      .how-to-title b {
-        color: #ffb800;
-        text-decoration: underline;
-      }
-
-      .how-to-line {
-        text-align: center;
-      }
-
-      .how-to-line-bottom {
-        width: 84%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 20%;
-      }
-
-      .how-to-text span {
-        padding-top: 1%;
-      }
-
-      .how-to-text-4 span,
-      .how-to-text-5 span {
-        padding-top: 5%;
-      }
-
-      .how-to-text {
-        font-family: Segoe UI, sans-serif;
-        color: #ffffff;
-        padding: 15px 19px;
-        display: inline-block;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 14px;
-        line-height: 130%;
-      }
-
-      .how-to-text-1 {
-        width: clamp(160px, 71%, 220px);
-      }
-
-      .how-to-text-2 {
-        width: clamp(120px, 30%, 190px);
-      }
-
-      .how-to-text-3 {
-        width: clamp(190px, 25%, 220px);
-      }
-
-      .how-to-text-4 {
-        width: clamp(175px, 50%, 200px);
-      }
-
-      .how-to-text-5 {
-        width: clamp(150px, 58%, 180px);
-      }
-
-      .how-to-text b {
-        text-decoration: underline;
-        color: #ffb800;
-      }
-
-      .what-is {
-        margin: 50px 0 27px;
-      }
-
-      .what-is-title {
-        font-style: normal;
-        font-weight: 800;
-        font-size: 28px;
-        line-height: 112%;
-        text-align: center;
-        text-transform: uppercase;
-        color: #ffffff;
-      }
-
-      .what-is-title b {
-        color: #ffb800;
-        text-decoration: underline;
-      }
-
-      .what-is-text {
-        font-family: Segoe UI, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 130%;
-        text-align: center;
-        color: #ffffff;
-        opacity: 0.8;
-        max-width: 490px;
-        margin: 8px auto 0;
-      }
-
-      .what-is-table {
-        display: flex;
-        margin: 5px auto 0;
-      }
-
-      .what-is-try-now-link {
-        display: block;
-        text-align: center;
-        width: calc(100% / 3);
-        padding: 0 10px;
-      }
-
-      .what-is-casino-sites-link {
-        display: block;
-        text-align: center;
-        width: calc(100% / 3);
-        padding: 0 10px;
-      }
-
-      a.what-is-betting-tips-link {
-        display: block;
-        text-align: center;
-        width: calc(100% / 3);
-        padding: 0 10px;
-      }
-
-      .what-is-table img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .last {
-        display: block;
-        background: #4f2724;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-
-      .last-column {
-        display: block;
-        padding: 43px 28px 43px 28px;
-      }
-
-      .last-column-left {
-        max-width: max(calc(100% - 340px), 300px);
-        float: left;
-        padding: 35px 20px;
-      }
-
-      .last-column-right {
-        text-align: center;
-        display: inline-block;
-      }
-
-      .last-column-right img {
-        display: block;
-        margin-top: 13px;
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .last-title {
-        font-style: normal;
-        font-weight: 900;
-        font-size: 28px;
-        line-height: 36px;
-        text-transform: uppercase;
-        color: #ffffff;
-        max-width: 40%;
-        display: block;
-        margin-bottom: 15px;
-      }
-      .last-title br {
-        display: none;
-      }
-
-      .last-title b {
-        color: #ffb800;
-      }
-
-      .last-title b b {
-        color: #ffb800;
-      }
-      .last-subtitle {
-        font-size: 11px;
-        line-height: 118%;
-        letter-spacing: 0.1px;
-        color: #ffffff;
-        opacity: 0.75;
-        max-width: 60%;
-      }
-      .last-subtitle-mobi {
-        display: none;
-      }
-      .last-subtitle b {
-        color: #ffb800;
-      }
-
-      .last-text {
-        display: block;
-        font-family: Segoe UI, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 15px;
-        letter-spacing: 0.1px;
-        color: #a7a7a7;
-        margin-top: 33px;
-      }
-
-      .last .last-link {
-        background: #ffb800;
-        border-radius: 5px;
-        width: 170px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 15px;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: block;
-        text-align: center;
-        color: #290401;
-        transition: all 0.2s;
-        padding: 16px 18px;
-        box-sizing: border-box;
-        margin-top: 9px;
-      }
-
-      .last .last-link:hover {
-        background-color: #ce2e39;
-      }
-
-      .footer {
-        color: rgba(255, 255, 255, 0.4);
-        font-family: Segoe UI, sans-serif;
-        margin-top: 27px;
-        font-size: 13px;
-      }
-
-      .footer-icons {
-        margin-bottom: 25px;
-      }
-
-      .footer-left-image {
-        float: left;
-        flex-shrink: 0;
-        margin-right: 14px;
-      }
-
-      .footer-left-image img {
-        padding-top: 17%;
-      }
-
-      .footer-right-images {
-        opacity: 0.5;
+        background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810759291_main%20banner%20mobile_01H6P2SQJXVPMHA5WYQYVNJWAD.png");
+        background-size: contain;
+        height: 458px;
         width: 100%;
       }
 
-      .footer-right-images img {
-        margin: 2% 0 0 2%;
-        vertical-align: middle;
+      /* steps */
+
+      .steps {
+        background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810753420_HOW%20TO%20JOIN%20AND%20PLAY%20AT%20mR%20SPIN%20mobile_01H6P2SHVD231D8DZRV0R68VQK.png");
+        background-size: contain;
+        height: 653px;
+        width: 100%;
       }
 
-      .footer-title {
-        font-style: normal;
-        font-weight: bold;
-        line-height: 17px;
-        text-transform: uppercase;
-        color: #ffffff;
-        opacity: 0.4;
-        margin-bottom: 8px;
+      /* inform */
+
+      .inform__text {
+        background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810755720_info%20mobile_01H6P2SM3962MTNH5STKW0W76W.png");
+        background-size: contain;
+        height: 122px;
+        width: 100%;
+        max-width: 212px;
+        margin: 0 auto 26px;
       }
 
-      .footer-text {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 13px;
-        line-height: 18px;
-        color: #ffffff;
-        opacity: 0.4;
+      .inform__wrapper {
+        display: block  !important;
+        margin: 0  !important;
+        text-align: center !important;
       }
 
-      .footer-bottom-line {
-        text-align: center;
-        margin-top: 20px;
+      .inform__logo {
+        display: inline-block  !important;
+        width: auto !important;
+        height: 83px  !important;
       }
 
-      .footer-bottom-line-2 {
-        margin-top: 12px;
+      .inform__logo:nth-child(even) {
+        margin: 0 0 0 85px !important;
       }
 
-      .footer-bottom-line-sep {
-        margin: 0 10px;
+      .inform__logo_second {
+        margin-left: 85px !important;
+        margin-right: 0 !important;
       }
 
-      .footer .footer-bottom-line a {
-        text-decoration: underline;
-        color: inherit;
+      .inform__logo:last-child {
+        margin-top: 20px  !important;
       }
 
-      .footer .footer-bottom-line a:hover {
-        text-decoration: none;
+      .inform__logo_first {
+        width: 89px !important;
       }
 
-      @media screen {
-        .header .header-link {
-          padding: 0 15px !important;
-        }
-        .last-column-right {
-          background: #6b3733;
-        }
-
-        .last-column-right {
-          float: right;
-        }
-        .banner-image-container {
-          width: 55%;
-        }
+      .inform__logo_second {
+        width: 98px !important;
       }
 
-      @media only screen and (max-device-width: 750px) {
-        br {
-          display: none;
-        }
-        .content {
-          padding: 20px !important;
-        }
-
-        .header {
-          text-align: center !important;
-        }
-
-        .header-logo-link {
-          padding: 20px 0 0 !important;
-        }
-
-        .header-menu {
-          float: none !important;
-          padding: 0 !important;
-          display: flex !important;
-          margin: 0 !important;
-        }
-
-        .header-item {
-          width: 100% !important;
-          font-size: 14px !important;
-        }
-
-        .header .header-link {
-          height: 58px !important;
-          line-height: 58px !important;
-        }
-
-        .header .header-link-tips {
-          padding-right: 15px !important;
-        }
-
-        .banner-container {
-          background: url("https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/banner-mobi-bg-bonus-30.png?raw=true")
-            no-repeat;
-          background-size: cover;
-          min-height: 564px !important;
-        }
-
-        .banner {
-          width: 100% !important;
-          max-width: none !important;
-          margin: 0 auto !important;
-          display: block !important;
-          text-align: center !important;
-          padding: 35px 14px 10px 14px !important;
-        }
-
-        .banner img {
-          margin: 0 auto !important;
-        }
-
-        .banner-text {
-          font-size: 27px !important;
-          max-width: 400px !important;
-        }
-        .banner-text br {
-          display: block;
-        }
-
-        .banner .banner-link {
-          margin: 15px auto 0px auto !important;
-        }
-
-        .banner-extra {
-          display: none;
-        }
-        .banner-extra-mobi {
-          display: inline-block !important;
-          font-size: 12px !important;
-          line-height: 118% !important;
-          letter-spacing: 0.1px !important;
-          color: #ffffff !important;
-          opacity: 0.75 !important;
-          margin-top: 29px !important;
-          margin-top: 15px !important;
-        }
-
-        .banner-image-container {
-          margin-top: 0 !important;
-        }
-
-        .banner-image-container-mobi {
-          display: block !important;
-          margin: 0 auto !important;
-          float: none !important;
-          width: 80% !important;
-        }
-
-        .banner-image-container-web {
-          display: none !important;
-        }
-
-        .banner-mobi-image {
-          display: block !important;
-          max-width: 100% !important;
-          font-size: 0 !important;
-        }
-
-        .how-to {
-          padding: 20px 15px !important;
-          width: 100% !important;
-        }
-
-        .how-to-title {
-          font-size: 22px !important;
-          margin-bottom: 5px !important;
-        }
-
-        .how-to-text {
-          display: block !important;
-          margin: 0 auto !important;
-          padding: 30px 0 0 !important;
-          font-size: 14px;
-          width: 80%;
-          line-height: 1.4;
-        }
-        .how-to-text-4,
-        .how-to-text-5 {
-          margin-top: 14px !important;
-        }
-
-        .how-to-text span {
-          padding-top: 5% !important;
-        }
-
-        .how-to-text-4 span,
-        .how-to-text-5 span {
-          padding-top: 7% !important;
-        }
-
-        .what-is {
-          margin: 30px 0 20px !important;
-        }
-
-        .what-is-title {
-          font-size: 22px !important;
-        }
-
-        .what-is-table {
-          width: 100% !important;
-          display: block !important;
-          text-align: center !important;
-          margin-top: 24px !important;
-        }
-
-        .what-is-table a {
-          padding: 0 !important;
-          display: inline-block !important;
-          width: 37% !important;
-        }
-
-        .what-is-table img {
-          padding: 0 !important;
-        }
-
-        a.what-is-casino-sites-link {
-          height: 90px;
-          width: 47% !important;
-          margin-right: 4%;
-        }
-
-        .what-is-casino-sites-link img {
-          float: left;
-        }
-
-        a.what-is-betting-tips-link {
-          height: 90px;
-          width: 47% !important;
-        }
-
-        .what-is-betting-tips-link img {
-          float: right;
-        }
-
-        .what-is-try-now-link img {
-          margin-top: 0 !important;
-          width: 60% !important;
-        }
-
-        .last {
-          display: block !important;
-        }
-
-        .last-title {
-          font-size: 22px !important;
-          max-width: none !important;
-          text-align: center;
-          margin-right: 0;
-          margin-bottom: 0;
-        }
-        .last-title br {
-          display: block;
-        }
-
-        .last-column {
-          display: block !important;
-          padding: 15px !important;
-          max-width: none !important;
-          float: none !important;
-        }
-
-        .last-column-right {
-          overflow: hidden !important;
-          text-align: left !important;
-          padding: 5px 15px 20px !important;
-          background: none !important;
-        }
-
-        .last-column-right img {
-          margin-top: 0 !important;
-        }
-
-        .last-text {
-          margin-top: 10px !important;
-        }
-
-        .last-text br {
-          display: none !important;
-        }
-
-        .last .last-link {
-          margin: 0 auto !important;
-        }
-        .last-subtitle {
-          display: none;
-        }
-        .last-subtitle-mobi {
-          text-align: center;
-          display: block;
-          font-size: 11px;
-          line-height: 118%;
-          letter-spacing: 0.1px;
-          color: #ffffff;
-          opacity: 0.75;
-          margin: 15px 0;
-        }
-
-        .footer-icons {
-          display: block !important;
-        }
-
-        .footer-left-image {
-          margin-top: 16px !important;
-          margin-right: 0 !important;
-          /* text-align: center !important; */
-          float: none;
-        }
-
-        .footer-left-image img {
-          padding-top: 0 !important;
-        }
-
-        .footer-right-images {
-          margin: 0 -1% !important;
-        }
-
-        .footer-right-images img {
-          padding: 1% !important;
-          margin: 0;
-        }
+      .inform__logo_last {
+        width: 75px !important;
       }
-    </style>
-  </head>
 
-  <body>
-    <div class="root">
-      <div class="content">
-        <div class="header-container">
-          <div class="header">
-            <a
-              class="header-logo-link"
-              href="https://www.stakers.com/en/casino/"
-            >
-              <img
-                class="header-logo"
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/stakers-29.png?raw=true"
-                alt="stakers logo"
-                width="112"
-                height="29"
-              />
-            </a>
+      /* bottom-banner */
 
-            <div class="header-menu">
-              <div class="header-item">
-                <a class="header-link" href="https://www.stakers.com/en/casino/"
-                  >CASINO</a
-                >
-              </div>
-              <div class="header-item">
-                <a
-                  class="header-link"
-                  href="https://www.stakers.com/en/bookmaker/"
-                  >bETTING</a
-                >
-              </div>
-              <div class="header-item">
-                <a
-                  class="header-link header-link-tips"
-                  href="https://www.stakers.com/en/predictions/"
-                  >TIPS</a
-                >
-              </div>
-            </div>
-          </div>
+      .bottom-banner {
+        background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810751071_banner%20mobile_01H6P2SFJ1RNKDF28ECPFGQY1B.png");
+        background-size: contain;
+        height: 274px;
+        width: 100%;
+      }
+
+      /* footer */
+
+      .footer__wrapper {
+        display: block  !important;
+      }
+
+      .footer__col.col-right {
+        display: block  !important;
+      }
+
+      .footer__col.col-right .footer__logo {
+        display: inline-block !important;
+      }
+
+      .footer__logo.main {
+        margin-bottom: 20px !important;
+      }
+
+      .footer__separator:last-of-type {
+        display: none !important;
+      }
+
+      .footer__separator.last {
+        display: none !important;
+      }
+
+      .footer__col.col-right {
+        margin-left: 0 !important;
+      }
+
+      /* перебиваем стили для темной темы gmail на ios. цвета необходимо задавать в градиенте.
+      u + .body selector - обращение к селектору в gmail на ios
+      div > u + .body    - обращение к селектору в gmail вне ios (чтобы снять градиенты, т.к. они не везде работают) */
+
+      u + .body .bg-body {
+        /*задаем как градиент, чтобы в черной теме GMAIL на IOS не перебивался цвет;*/
+        background-image: linear-gradient(#230503,#230503) !important;
+        background-color: transparent !important;
+      }
+
+      u + .body .bg-dark {
+        background-image: linear-gradient(#4F2724,#4F2724)!important;
+        background-color: transparent !important;
+      }
+
+      u + .body .white-text {
+        background-image:linear-gradient(#fff,#fff) !important;
+        background-clip: text !important;
+        color: transparent !important;
+      }
+
+      div > u + .body .white-text {
+        background-image:none !important;
+        background-clip: inherit !important;
+        color: #fff !important;
+      }
+
+      u + .body .footer-gray {
+        background-image:linear-gradient(#867574, #867574) !important;
+        background-clip: text !important;
+        color: transparent !important;
+      }
+
+      div > u + .body .footer-gray {
+        background-image:none !important;
+        background-clip: inherit !important;
+        color: #867574 !important;
+      }
+    }
+  </style>
+</head>
+<body class="body">
+<div class="root bg-body">
+  <div class="container">
+    <header class="header bg-dark">
+      <a class="header__logo" href="https://www.stakers.com/en/casino/">
+        <img class="header__logo_img"
+             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810756873_logo%20(1)_01H6P2SN799AC27S5H48JC86F7.png"
+             alt="stakers logo"/>
+      </a>
+
+      <div class="header__nav">
+        <a class="header__nav_link white-text" href="https://www.stakers.com/en/casino/">casino</a>
+        <a class="header__nav_link white-text" href="https://www.stakers.com/en/bookmaker/">betting</a>
+        <a class="header__nav_link white-text" href="https://www.stakers.com/en/predictions/">tips</a>
+      </div>
+    </header>
+
+    <a class="banner" href="https://www.stakers.com/en/casino/t/1204/">
+      <img class="banner__img desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810758007_main%20banner%20(3)_01H6P2SPASRJJT5V4HGZY387ZB.png">
+    </a>
+
+    <a class="steps" href="https://www.stakers.com/en/casino/t/1204/">
+      <img class="desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810752265_HOW%20TO%20JOIN%20AND%20PLAY%20AT%20mR%20SPIN%20(2)_01H6P2SGQAA95RB6D6Y0SA48XA.png">
+    </a>
+
+    <div class="inform">
+      <div class="inform__text">
+        <img class="desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810754571_info%20(4)_01H6P2SJZC5N3VRWF21MBA7ECW.png">
+      </div>
+      <div class="inform__wrapper">
+        <a class="inform__logo inform__logo_first" href="https://www.stakers.com/en/casino/t/1204/">
+          <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810745874_1_01H6P2SAMHAHN9MJQM5AQSR5NN.png" alt="casino logo" width="89" height="83">
+        </a>
+        <a class="inform__logo inform__logo_second" href="https://www.stakers.com/en/bookmaker/">
+          <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810747505_2_01H6P2SC2JACGYGWE3784R3549.png" alt="betting logo" width="98" height="83">
+        </a>
+        <a class="inform__logo inform__logo_last" href="https://www.stakers.com/en/casino/t/1204/">
+          <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810748776_3_01H6P2SDA9ERC27HJZSCYEWPW4.png" alt="try now logo" width="75" height="83">
+        </a>
+      </div>
+    </div>
+
+    <a class="bottom-banner" href="https://www.stakers.com/en/casino/t/1204/">
+      <img class="desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810749913_banner%20(4)_01H6P2SEDZX9CK0QDEVPYTQNRP.png">
+    </a>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__col col-left">
+          <a class="footer__logo main" href="https://www.stakers.com/en/">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690810756873_logo%20(1)_01H6P2SN799AC27S5H48JC86F7.png"
+                 alt="stakers logo"
+                 width="70"
+                 height="16.602">
+          </a>
         </div>
-
-        <a
-          class="banner-container"
-          href="https://www.stakers.com/en/casino/t/1204/"
-        >
-          <span class="banner">
-            <img
-              src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/wild-west-wins.png?raw=true"
-              alt="wild-west-wins"
-              width="95"
-              height="35"
-            />
-
-            <span class="banner-text"
-              >Enjoy 20 FS <br />
-              for FREE!</span
-            >
-            <span class="banner-extra-mobi"
-              >New players only, no deposit required, valid debit card
-              verification required, £8 max win per 10 spins, max bonus
-              conversion £50, 65x wagering requirement, T&Cs apply</span
-            >
-            <span class="banner-link">Claim Spins</span>
-            <span class="banner-extra"
-              >New players only, no deposit required, valid debit card
-              verification required, £8 max win per 10 spins, max bonus
-              conversion £50, 65x wagering requirement, T&Cs apply</span
-            >
-          </span>
-        </a>
-
-        <a class="how-to" href="https://www.stakers.com/en/casino/t/1204/">
-          <span class="how-to-title"
-            >HOW TO JOIN AND PLAY AT <b>wild west wins</b>?</span
-          >
-
-          <span class="how-to-line how-to-line-top">
-            <span class="how-to-text how-to-text-1">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/num-1-bonus-30.png?raw=true"
-                alt=""
-                width="34"
-                height="35"
-              />
-              <div>
-                Join Wild West Wins with 20&#160;<br />
-                <b>NO DEPOSIT</b> FS on Mustang Gold<br />
-                &#160;
-              </div>
-            </span>
-            <span class="how-to-text how-to-text-2">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/num-2-bonus-30.png?raw=true"
-                alt=""
-                width="34"
-                height="35"
-              />
-              <div>
-                Open Your Loot Chest to win up to <b>500 Free Spins</b><br />
-                &#160;
-              </div>
-            </span>
-            <span class="how-to-text how-to-text-3">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/num-3-bonus-30.png?raw=true"
-                alt=""
-                width="34"
-                height="35"
-              />
-              <div>
-                Grab the Chance to
-                <b>win luxury electronic items worth £3,000</b> combined
-              </div>
-            </span>
-            <span class="how-to-text how-to-text-4">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/num-4-bonus-30.png?raw=true"
-                alt=""
-                width="34"
-                height="35"
-              />
-              <div>
-                Join the <b>Exclusive Friday Fun Bingo Room</b> to win&#160;<br />
-                a share of £2,500
-              </div>
-            </span>
-            <span class="how-to-text how-to-text-5">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/num-5-bonus-30.png?raw=true"
-                alt=""
-                width="34"
-                height="35"
-              />
-              <div>
-                Use the code PRO to win <b>50+ Free Spins</b> on top slots<br />
-                &#160;
-              </div>
-            </span>
-          </span>
-        </a>
-
-        <div class="what-is">
-          <div class="what-is-title">new to <b>STAKERS</b> CLUB?</div>
-          <div class="what-is-text">
-            Join our community to enjoy the very best in online casino
-            entertainment, 24 hours a day, seven days a week
+        <div class="footer__col col-right">
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464422041_f1_01H6BRG8DYJ0D9JM1FQMNZ8E09.png"
+                 alt=""
+                 width="20"
+                 height="20">
           </div>
-
-          <div class="what-is-table">
-            <a
-              href="https://www.stakers.com/en/casino/t/1204/"
-              class="what-is-casino-sites-link"
-            >
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/casino-sites-en-30.png?raw=true"
-                style="padding-top: 11%; width: 45%"
-                alt="casino sites"
-                width="89"
-                height="83"
-              />
-            </a>
-
-            <a
-              href="https://www.stakers.com/en/bookmaker/"
-              class="what-is-betting-tips-link"
-            >
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/betting-tips-en-30.png?raw=true"
-                style="padding-top: 10%; width: 50%"
-                alt="betting tips"
-                width="98"
-                height="83"
-              />
-            </a>
-
-            <a
-              href="https://www.stakers.com/en/casino/t/1204/"
-              class="what-is-try-now-link"
-            >
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/try-now-en-30.png?raw=true"
-                style="padding-top: 10%; width: 40%"
-                alt="try now"
-                width="75"
-                height="83"
-              />
-            </a>
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464423694_f2_01H6BRG9YEMM5GBZRMNNTSZFKZ.png"
+                 alt=""
+                 width="49"
+                 height="22">
           </div>
-        </div>
-
-        <a class="last" href="https://www.stakers.com/en/casino/t/1204/">
-          <span class="last-column last-column-left">
-            <span class="last-title"
-              >Enjoy <b>20 FS</b><br />
-              for FREE!</span
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464425112_f3_01H6BRGB4BS3FYMEVTXD5STJ31.png"
+                 alt=""
+                 width="20"
+                 height="22"
             >
-            <span class="last-subtitle"
-              >New players only, no deposit required, valid debit card
-              verification required, £8 max win per 10 spins, max bonus
-              conversion £50, 65x wagering requirement, T&Cs apply</span
-            >
-          </span>
-
-          <span class="last-column last-column-right">
-            <img
-              src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/wild-west-wins.png?raw=true"
-              alt="wild-west-wins"
-              width="95"
-              height="35"
-            />
-            <span class="last-subtitle-mobi"
-              >New players only, no deposit required, valid debit card
-              verification required, £8 max win per 10 spins, max bonus
-              conversion £50, 65x wagering requirement, T&Cs apply</span
-            >
-            <span class="last-link">Claim Spins</span>
-          </span>
-        </a>
-
-        <div class="footer">
-          <div class="footer-icons">
-            <a class="footer-left-image" href="https://www.stakers.com/en/">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/stakers-29.png?raw=true"
-                alt="stakers logo"
-                width="91"
-                height="23"
-              />
-            </a>
-
-            <div class="footer-right-images">
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/footer-icon-1@2x.png?raw=true"
-                alt=""
-                width="28"
-                height="28"
-              />
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/footer-icon-2@2x.png?raw=true"
-                alt=""
-                width="66"
-                height="27"
-              />
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/footer-icon-3@2x.png?raw=true"
-                alt=""
-                width="27"
-                height="30"
-              />
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/footer-icon-4@2x.png?raw=true"
-                alt=""
-                width="147"
-                height="20"
-              />
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/footer-icon-5@2x.png?raw=true"
-                alt=""
-                width="42"
-                height="26"
-              />
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/gamstop.png?raw=true"
-                alt=""
-                width="101"
-                height="26"
-              />
-              <img
-                src="https://github.com/vitalyreutsky/stakers-banners-images/blob/master/wildwestwins/footer-icon-7@2x.png?raw=true"
-                alt=""
-                width="149"
-                height="21"
-              />
-            </div>
           </div>
-
-          <div>
-            <div class="footer-text">
-              Your email address has been verified and is now on our mailing
-              list to receive regular promotions, tips and other information.
-              This newsletter and all the deals that are listed on Stakers.com
-              are related to gambling and are suitable for those at or above the
-              legal age (18+) within the jurisdictions that allow online
-              gambling.
-            </div>
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464426302_f4_01H6BRGC9HDNV6CJBKKQX91F2G.png"
+                 alt=""
+                 width="114"
+                 height="22">
           </div>
-          <div style="margin-top: 20px">
-            <div class="footer-title">DISCLAIMER</div>
-            <div class="footer-text">
-              Certain jurisdictions make online betting illegal. Before playing
-              online, it's your responsibility to check the local regulations in
-              your area. Stakers.com takes no responsibility for the actions you
-              take.
-            </div>
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464427500_f5_01H6BRGDEX58DSRQN17KQVHE5V.png"
+                 alt=""
+                 width="30"
+                 height="22">
           </div>
-
-          <div class="footer-bottom-line footer-bottom-line-1">
-            <a href="https://www.stakers.com/en/info/help/terms_and_conditions/"
-              >Terms and Conditions</a
-            >
-            <span class="footer-bottom-line-sep">|</span>
-            <a href="https://www.stakers.com/en/info/help/privacy_policy/"
-              >Privacy Policy</a
-            >
-            <span class="footer-bottom-line-sep">|</span>
-            <a class="untracked" href="{% unsubscribe_url %}">Unsubscribe</a>
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464428865_f6_01H6BRGFKJRM623X667CFT9CVR.png"
+                 alt=""
+                 width="79"
+                 height="22">
           </div>
-
-          <div class="footer-bottom-line footer-bottom-line-2">
-            Have a question? Write to us
-            <a href="mailto:latest@news1.stakers.com"
-              >latest@news1.stakers.com</a
-            >
+          <div class="footer__logo">
+            <img class="footer__logo_img"
+                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464430894_f7_01H6BRGGWPPBG3QDES604814X4.png"
+                 alt=""
+                 width="121"
+                 height="20">
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+      <div class="footer__text footer-gray text">
+        Your email address has been verified and is now on our mailing list to receive regular promotions, tips and other information. This newsletter and all the deals that are listed on Stakers.com are related to gambling and are suitable for those at or above the legal age (18+) within the jurisdictions that allow online gambling.
+        <div class="footer__title footer-gray">DISCLAIMER</div>
+        Certain jurisdictions make online betting illegal. Before playing online, it's your responsibility to check the local regulations in your area. Stakers.com takes no responsibility for the actions you take.
+      </div>
+
+      <div class="footer__links">
+        <a class="footer__link footer-gray text" href="https://www.stakers.com/en/info/help/terms_and_conditions/">Terms and Conditions</a>
+        <span class="footer__separator footer-gray text">|</span>
+        <a class="footer__link footer-gray text" href="https://www.stakers.com/en/info/help/privacy_policy/">Privacy Policy</a>
+        <span class="footer__separator footer-gray text last">|</span>
+        <a class="footer__link footer-gray text-underline text" href="{% unsubscribe_url %}">Unsubscribe</a>
+      </div>
+
+      <div class="footer__bottom footer-gray text">
+        Have a question? Write to us
+        <a href="mailto:support@stakers.com">support@stakers.com</a>
+      </div>
+    </footer>
+  </div>
+</div>
+</body>
