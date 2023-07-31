@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            font-family: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 150%;
+        }
+
+        .container {
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 612px;
+            padding: 20px 50px 30px;
+        }
+
+        /*header*/
+
+        .header {
+            border-radius: 10px;
+            padding: 16px 20px 11px;
+            margin-bottom: 13px;
+        }
+
+        .header__logo {
+            display: inline-block;
+            width: 90px;
+            height: 22px;
+        }
+
+        .header__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header__nav {
+            float: right;
+            margin-top: 2px;
+        }
+
+        .header__nav_link {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 120%;
+            text-transform: uppercase;
+        }
+
+        .header__nav_link:nth-child(even) {
+            margin: 0 30px;
+        }
+
+        /*banner*/
+
+        .banner {
+            /*padding: 28px 26px;*/
+            /*background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690523768169_main%20banner_01H6DH3CWSM6NRE2X10FNVDB11.png");*/
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            height: 285px;
+            box-sizing: border-box;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .banner__img {
+            width: 100%;
+        }
+
+        .banner__body {
+            display: none;
+            max-width: 277px;
+        }
+
+        .banner__logo {
+            width: 140.625px;
+            height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .banner__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner__title {
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 120%;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .banner__span {
+            margin-bottom: 15px;
+        }
+
+        .banner__span_code {
+            display: inline-block;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            border-radius: 500px;
+            border: 1.5px solid #3FE381;
+            background-color: rgba(19, 19, 23, 0.38);
+            padding: 5px 14.5px;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+
+        /*steps*/
+
+        .steps {
+            display: block;
+            padding: 30px 34px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .steps__title {
+            line-height: 130%;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .steps__wrapper {}
+
+        .steps__row {
+            display: flex;
+        }
+
+        .steps__row.top-row {
+            margin-bottom: 25px;
+        }
+
+        .steps__row.bottom-row {
+            margin-left: 78px;
+        }
+
+        .steps__row.bottom-row .steps__elem:first-child {
+            margin-right: 67px;
+        }
+
+        .steps__elem {
+        }
+
+        .steps__row.top-row .steps__elem:nth-child(even) {
+            margin: 0 32px;
+        }
+
+        .steps__logo {
+            width: 48px;
+            height: 48px;
+            margin-left: 56px;
+        }
+
+        .steps__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .steps__text {
+            text-align: center;
+            line-height: 130%;
+            width: 160px;
+            font-size: 10px;
+        }
+
+        .steps__text_span {
+            font-weight: 700;
+        }
+
+        /* inform */
+
+        .inform {
+            margin-bottom: 30px;
+        }
+
+        .inform__title {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .inform__desc {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .inform__wrapper {
+            display: flex;
+            margin: 0 50px;
+        }
+
+        .inform__logo {
+            width: 144px;
+            height: 55px;
+        }
+
+        .inform__logo:nth-child(even) {
+            margin: 0 40px;
+        }
+
+        .inform__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* bottom banner */
+
+        .bottom-banner {
+            margin-bottom: 30px;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bottom-banner__col {}
+
+        .bottom-banner__col.left-col {
+            width: calc(100% - 240px);
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .bottom-banner__col.right-col {
+            width: 240px;
+            box-sizing: border-box;
+            padding: 21px 50px;
+        }
+
+        .bottom-banner__title {
+            margin-bottom: 11px;
+        }
+
+        .bottom-banner__desc {}
+
+        .bottom-banner__desc_span {
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        .bottom-banner__logo {
+            width: 140px;
+            height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .bottom-banner__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bottom-banner__btn {}
+
+        /* footer */
+
+        .footer {}
+
+        .footer__wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer__col {}
+
+        .footer__col.col-left {}
+
+        .footer__col.col-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer__logo {
+            margin-right: 15px;
+        }
+
+        .footer__logo:last-child {
+            margin-right: 0;
+        }
+
+        .footer__logo.main {
+            margin-right: 19px;
+        }
+
+        .footer__logo_img {}
+
+        .footer__text {
+            margin-bottom: 20px;
+        }
+
+        .footer__title {
+            margin: 20px 0 10px;
+            font-weight: 700;
+            line-height: 130%;
+            text-transform: uppercase;
+        }
+
+        .footer__links {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer__separator {
+            margin: 0 10px;
+        }
+
+        .footer__bottom {
+            text-align: center;
+        }
+
+        /* consts */
+
+        .btn {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            border-radius: 5000px;
+            border: 1.5px solid #3FE381;
+            padding: 10px 20.5px;
+            display: inline-block;
+        }
+
+        .title {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 120%;
+            text-transform: uppercase;
+        }
+
+        .text {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+        }
+
+        .text-underline {
+            text-decoration-line: underline;
+        }
+
+        /* colors consts */
+
+        .white-text {
+            color: #fff;
+        }
+
+        .dark-font {
+            color: #0D8F36;
+        }
+
+        .light-font {
+            color: #92E57A;
+        }
+
+        .footer-gray {
+            color: rgba(255, 255, 255, 0.50);
+        }
+
+        .bg-body {
+            background-color: #010200;
+        }
+
+        .bg-dark {
+            background-color: #181A16;
+        }
+
+        .bg-light {
+            background-color: #232420;
+        }
+
+        .btn-bg {
+            background-color: #C2F0B0;
+        }
+
+        @media only screen and (max-device-width: 750px) {
+
+            .container {
+                border-radius: 15px  !important;
+                margin: 0 auto  !important;
+                max-width: 280px  !important;
+                padding: 20px 20px 30px  !important;
+            }
+
+            /* header */
+
+            .header {
+                padding: 20px 40px  !important;
+            }
+
+            .header__logo {
+                width: 100%  !important;
+                display: flex  !important;
+                margin-bottom: 20px  !important;
+            }
+
+            .header__logo_img {
+                width: 92px  !important;
+                margin: 0 auto  !important;
+            }
+
+            .header__nav {
+                margin-top: 0  !important;
+                float: none  !important;
+            }
+
+            .header__nav_link {
+                font-weight: 700  !important;
+            }
+
+            /* banner */
+
+            .banner {
+                padding: 20px 12px  !important;
+                background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690543945711_main%20banner%20mob_01H6E4B5QBTBRPY4S43ZNP1KCF.png")  !important;
+                background-size: cover  !important;
+                height: 450px  !important;
+            }
+
+            .banner__body {
+                display: block  !important;
+                text-align: center  !important;
+            }
+
+            .banner__logo {
+                width: 100%;
+                margin-bottom: 12px  !important;
+            }
+
+            .banner__logo_img {
+                width: 140.625px  !important;
+            }
+
+            .banner__title {
+                font-size: 26px  !important;
+                margin-bottom: 12px  !important;
+            }
+
+            .banner__span {
+                margin-bottom: 12px  !important;
+            }
+
+            .banner__img {
+                display: none  !important;
+            }
+
+            /* steps */
+
+            .steps {
+                padding: 20px 21px 30px  !important;
+            }
+
+            .steps__row {
+                display: block  !important;
+                padding: 0 39px  !important;
+            }
+
+            .steps__row.top-row .steps__elem:nth-child(even) {
+                margin: 0 !important;
+            }
+
+            .steps__row.bottom-row {
+                margin-left: 0  !important;
+            }
+
+            .steps__row.bottom-row .steps__elem:first-child {
+                margin-right: 0  !important;
+            }
+
+            .steps__elem {
+                margin-bottom: 20px !important;
+            }
+
+            .steps__elem:last-child {
+                margin-bottom: 0 !important;
+            }
+
+            .steps__row.top-row {
+                margin-bottom: 20px  !important;
+            }
+
+            /* inform */
+
+            .inform {
+                text-align: center  !important;
+            }
+
+            .inform__title {
+                max-width: 208px  !important;
+                margin: 0 26px 10px  !important;
+            }
+
+            .inform__desc {
+                max-width: 228px  !important;
+                margin: 0 26px 26px  !important;
+            }
+
+            .inform__desc br {
+                display: none  !important;
+            }
+
+            .inform__wrapper {
+                display: block  !important;
+                margin: 0  !important;
+            }
+
+            .inform__logo {
+                display: inline-block  !important;
+                width: 130px !important;
+                height: auto  !important;
+            }
+
+            .inform__logo:nth-child(even) {
+                margin: 0 !important;
+            }
+
+            .inform__logo:last-child {
+                margin-top: 20px  !important;
+            }
+
+            /* bottom-banner */
+
+            .bottom-banner {
+                display: block  !important;
+            }
+
+            .bottom-banner__col {
+                text-align: center  !important;
+            }
+
+            .bottom-banner__col.left-col {
+                width: 100%  !important;
+                padding: 20px 20px 0  !important;
+            }
+
+            .bottom-banner__col.right-col {
+                width: 100%  !important;
+                padding-top: 15px  !important;
+                padding-bottom: 30px  !important;
+                background-color: transparent  !important;
+            }
+
+            .bottom-banner__title {
+                margin-bottom: 15px  !important;
+            }
+
+            .bottom-banner__logo {
+                width: 100%  !important;
+            }
+
+            .bottom-banner__logo_img {
+                width: 140px  !important;
+            }
+
+            /* footer */
+
+            .footer__wrapper {
+                display: block  !important;
+            }
+
+            .footer__col.col-right {
+                display: block  !important;
+            }
+
+            .footer__col.col-right .footer__logo {
+                display: inline-block !important;
+            }
+
+            .footer__logo.main {
+                margin-bottom: 20px !important;
+            }
+
+            .footer__separator:last-of-type {
+                display: none !important;
+            }
+
+            .footer__separator.last {
+                display: none !important;
+            }
+
+            /* перебиваем стили для темной темы gmail на ios. цвета необходимо задавать в градиенте.
+            u + .body selector - обращение к селектору в gmail на ios
+            div > u + .body    - обращение к селектору в gmail вне ios (чтобы снять градиенты, т.к. они не везде работают) */
+
+            u + .body .bg-body {
+                /*задаем как градиент, чтобы в черной теме GMAIL на IOS не перебивался цвет;*/
+                background-image: linear-gradient(#010200,#010200) !important;
+                background-color: transparent !important;
+            }
+
+            u + .body .banner__span_code {
+                background-image: linear-gradient(rgba(19, 19, 23, 0.38),rgba(19, 19, 23, 0.38))  !important;
+                background-color: transparent !important;
+            }
+
+            u + .body .bg-dark {
+                background-image: linear-gradient(#181A16,#181A16)!important;
+                background-color: transparent !important;
+            }
+
+            u + .body .bg-light {
+                background-image: linear-gradient(#232420,#232420)!important;
+                background-color: transparent !important;
+            }
+
+            u + .body .bottom-banner__col.right-col.bg-light {
+                background-image: none !important;
+                background-color: transparent !important;
+            }
+
+            u + .body .white-text {
+                background-image:linear-gradient(#fff,#fff) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+
+            div > u + .body .white-text {
+                background-image:none !important;
+                background-clip: inherit !important;
+                color: #fff !important;
+            }
+
+            u + .body .dark-font {
+                background-image:linear-gradient(#0D8F36,#0D8F36) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+
+            div > u + .body .dark-font {
+                background-image:none !important;
+                background-clip: inherit !important;
+                color: #0D8F36 !important;
+            }
+
+            u + .body .light-font {
+                background-image: linear-gradient(#92E57A,#92E57A) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+
+            div > u + .body .light-font {
+                background-image:none !important;
+                background-clip: inherit !important;
+                color: #92E57A !important;
+            }
+
+            u + .body .footer-gray {
+                background-image:linear-gradient(rgba(255, 255, 255, 0.50),rgba(255, 255, 255, 0.50)) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+
+            div > u + .body .footer-gray {
+                background-image:none !important;
+                background-clip: inherit !important;
+                color: rgba(255, 255, 255, 0.50) !important;
+            }
+
+            u + .body .steps__title .light-font {
+                background-image: linear-gradient(#92E57A,#92E57A) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+        }
+    </style>
+    <style>
+        @media only screen and (max-device-width: 750px) {
+            /*hardcode*/
+            .steps__elem.steps_second {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .inform__logo_second {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /*u + .body .dark-font {*/
+            /*    background-image:linear-gradient(#0D8F36,#0D8F36) !important;*/
+            /*    background-clip: text !important;*/
+            /*    color: transparent !important;*/
+            /*}*/
+
+            u + .body .dark-font.btn-bg {
+                background-image: linear-gradient(#C2F0B0,#C2F0B0) !important;
+                background-color: transparent !important;
+                background-clip: unset !important;
+                color: #0D8F36 !important;
+            }
+            u + .body .steps .steps__title .steps-underline {
+                background-image: linear-gradient(#92E57A,#92E57A) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="root bg-body">
+        <div class="container">
+
+            <header class="header bg-dark">
+                <a class="header__logo" href="https://www.stakers.com/en/casino/">
+                    <img class="header__logo_img"
+                        src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690451542446_logo_01H6BC76R59HQ0FM9NKV1BTJ47.png"
+                        alt="stakers logo"/>
+                </a>
+
+                <div class="header__nav">
+                    <a class="header__nav_link white-text" href="https://www.stakers.com/en/casino/">casino</a>
+                    <a class="header__nav_link white-text" href="https://www.stakers.com/en/bookmaker/">betting</a>
+                    <a class="header__nav_link white-text" href="https://www.stakers.com/en/predictions/">tips</a>
+                </div>
+            </header>
+
+            <a class="banner" href="https://example.com/">
+                <div class="banner__body">
+                    <div class="banner__logo">
+                        <img class="banner__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690524453622_logo-big_01H6DHRBCN294R5F1AA6QN3M3R.png" alt="banner logo">
+                    </div>
+                    <h1 class="banner__title white-text">Claim your <br>25 no deposit FS</h1>
+                    <div class="banner__span text white-text">Exclusive Bonus Code: <span class="banner__span_code white-text">FS25</span></div>
+                    <div class="banner__btn btn btn-bg dark-font">claim spins</div>
+
+                </div>
+                <!-- вставляем картинку для десктопа со всем наполнениям, т.к. в gmail не всегда отрабатывает bg-image. banner__body - скрываем на десктопе. -->
+                <img class="banner__img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690542873935_main%20banner%20desc_01H6E3AFVZ0QFR4X7BT2RW0MX6.png">
+            </a>
+
+            <a class="steps bg-dark" href="https://example.com/">
+                <h2 class="steps__title title white-text">HOW TO JOIN AND PLAY AT <br><span class="light-font text-underline steps-underline">crocoslots CASINO</span>?</h2>
+                <div class="steps__wrapper">
+                    <div class="steps__row top-row">
+                        <div class="steps__elem">
+                            <div class="steps__logo">
+                                <img class="steps__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690526335924_1_01H6DKHRF49X8SZ83452QM6PXV.png" alt="step 1">
+                            </div>
+                            <p class="steps__text white-text">Start your journey with 25<br> <span class="steps__text_span light-font text-underline">NO DEPOSIT</span> Spins using<br> the code above</p>
+                        </div>
+
+                        <div class="steps__elem steps_second">
+                            <div class="steps__logo">
+                                <img class="steps__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690526337278_2_01H6DKHSSFN61X5GDP2WF563RH.png" alt="step 2">
+                            </div>
+                            <p class="steps__text white-text">Snatch a fancy<br> <span class="steps__text_span light-font text-underline">225% Welcome Package<br> of up to €3000 + 225 FS</span></p>
+                        </div>
+
+                        <div class="steps__elem">
+                            <div class="steps__logo">
+                                <img class="steps__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690526338475_3_01H6DKHTYX7WCCC3PWYGZRCJFK.png" alt="step 3">
+                            </div>
+                            <p class="steps__text white-text">Double your luck with<br> an amazing <span class="steps__text_span light-font text-underline">30% Tuesday<br> Bonus of up to €500</span></p>
+                        </div>
+                    </div>
+
+                    <div class="steps__row bottom-row">
+                        <div class="steps__elem">
+                            <div class="steps__logo">
+                                <img class="steps__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690526333335_4_01H6DKHNY7YTH3T2PNNYCR33FQ.png" alt="step 4">
+                            </div>
+                            <p class="steps__text white-text">Use code CASH while<br> depositing and grab a<br><span class="steps__text_span light-font text-underline">10% No Wagering Bonus</span></p>
+                        </div>
+
+                        <div class="steps__elem">
+                            <div class="steps__logo">
+                                <img class="steps__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690526334736_5_01H6DKHQA0Q5M66F5FHX242NN5.png" alt="step 5">
+                            </div>
+                            <p class="steps__text white-text">Become a Croco VIP<br> and benefit from a<br> <span class="steps__text_span light-font text-underline">Daily Cashbacks of up to 15%</span></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="inform">
+                <h2 class="inform__title title white-text">new to <span class="light-font text-underline">STAKERS</span> CLUB?</h2>
+                <p class="inform__desc text white-text">Join our community to enjoy the very best in<br> online casino entertainment, 24 hours a day,<br> seven days a week</p>
+
+                <div class="inform__wrapper">
+                    <a class="inform__logo" href="https://example.com/">
+                        <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690529489866_11_01H6DPJ0FSEN4C9HPTSYT1BG9T.png" alt="casino logo">
+                    </a>
+                    <a class="inform__logo inform__logo_second" href="https://example.com/">
+                        <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690529491069_22_01H6DPJ1NA1TY819M3G9HAP97H.png" alt="betting logo">
+                    </a>
+                    <a class="inform__logo" href="https://example.com/">
+                        <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690529487334_33_01H6DPHZ3X5VWY2BM9S55TP3VN.png" alt="try now logo">
+                    </a>
+                </div>
+            </div>
+
+            <a class="bottom-banner bg-dark" href="https://example.com/">
+                <div class="bottom-banner__col left-col">
+                    <h2 class="bottom-banner__title title white-text">Claim your<br><span class="light-font text-underline">25 no deposit FS</span></h2>
+                    <p class="bottom-banner__desc text white-text">Exclusive Bonus Code:<span class="bottom-banner__desc_span light-font text-underline">FS25</span></p>
+                </div>
+                <div class="bottom-banner__col right-col bg-light">
+                    <div class="bottom-banner__logo">
+                        <img class="bottom-banner__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690524453622_logo-big_01H6DHRBCN294R5F1AA6QN3M3R.png" alt="banner logo">
+                    </div>
+                    <div class="bottom-banner__btn btn btn-bg dark-font">claim spins</div>
+                </div>
+            </a>
+
+            <footer class="footer">
+                <div class="footer__wrapper">
+                    <div class="footer__col col-left">
+                        <div class="footer__logo main">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690451542446_logo_01H6BC76R59HQ0FM9NKV1BTJ47.png"
+                                 alt="stakers logo"
+                                 width="70"
+                                 height="16.602">
+                        </div>
+                    </div>
+                    <div class="footer__col col-right">
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464422041_f1_01H6BRG8DYJ0D9JM1FQMNZ8E09.png"
+                                 alt=""
+                                 width="20"
+                                 height="20">
+                        </div>
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464423694_f2_01H6BRG9YEMM5GBZRMNNTSZFKZ.png"
+                                 alt=""
+                                 width="49"
+                                 height="22">
+                        </div>
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464425112_f3_01H6BRGB4BS3FYMEVTXD5STJ31.png"
+                                 alt=""
+                                 width="20"
+                                 height="22"
+                            >
+                        </div>
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464426302_f4_01H6BRGC9HDNV6CJBKKQX91F2G.png"
+                                 alt=""
+                                 width="114"
+                                 height="22">
+                        </div>
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464427500_f5_01H6BRGDEX58DSRQN17KQVHE5V.png"
+                                 alt=""
+                                 width="30"
+                                 height="22">
+                        </div>
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464428865_f6_01H6BRGFKJRM623X667CFT9CVR.png"
+                                 alt=""
+                                 width="79"
+                                 height="22">
+                        </div>
+                        <div class="footer__logo">
+                            <img class="footer__logo_img"
+                                 src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464430894_f7_01H6BRGGWPPBG3QDES604814X4.png"
+                                 alt=""
+                                 width="121"
+                                 height="20">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__text footer-gray text">
+                    Your email address has been verified and is now on our mailing list to receive regular promotions, tips and other information. This newsletter and all the deals that are listed on Stakers.com are related to gambling and are suitable for those at or above the legal age (18+) within the jurisdictions that allow online gambling.
+                    <div class="footer__title footer-gray">DISCLAIMER</div>
+                    Certain jurisdictions make online betting illegal. Before playing online, it's your responsibility to check the local regulations in your area. Stakers.com takes no responsibility for the actions you take.
+                </div>
+
+                <div class="footer__links">
+                    <a class="footer__link footer-gray text" href="https://www.stakers.com/en/info/help/terms_and_conditions/">Terms and Conditions</a>
+                    <span class="footer__separator footer-gray text">|</span>
+                    <a class="footer__link footer-gray text" href="https://www.stakers.com/en/info/help/privacy_policy/">Privacy Policy</a>
+                    <span class="footer__separator footer-gray text last">|</span>
+                    <a class="footer__link footer-gray text-underline text" href="{% unsubscribe_url %}">Unsubscribe</a>
+                </div>
+
+                <div class="footer__bottom footer-gray text">
+                    Have a question? Write to us
+                    <a href="mailto:support@stakers.com">support@stakers.com</a>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>
