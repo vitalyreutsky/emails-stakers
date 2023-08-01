@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            font-family: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 150%;
+        }
+
+        .container {
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 612px;
+            padding: 20px 50px 30px;
+        }
+
+        .desktop-img {
+            width: 100%;
+        }
+
+        /*header*/
+
+        .header {
+            border-radius: 10px;
+            padding: 16px 20px 11px;
+            margin-bottom: 13px;
+        }
+
+        .header__logo {
+            display: inline-block;
+            width: 90px;
+            height: 22px;
+        }
+
+        .header__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header__nav {
+            float: right;
+            margin-top: 2px;
+        }
+
+        .header__nav_link {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            text-transform: uppercase;
+        }
+
+        .header__nav_link:nth-child(even) {
+            margin: 0 30px;
+        }
+
+        /*banner*/
+
+        .banner {
+            border-radius: 10px;
+            height: 263px;
+            box-sizing: border-box;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .banner__img {
+            width: 100%;
+        }
+
+        /* steps */
+        .steps {
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        /* inform */
+
+        .inform {
+            margin-bottom: 30px;
+        }
+
+        .inform__text {
+            max-width: 446px;
+            margin: 0 auto 26px;
+        }
+
+        .inform__wrapper {
+            display: flex;
+            margin: 0 40px;
+        }
+
+        .inform__logo {
+            width: 144px;
+            height: 65px;
+        }
+
+        .inform__logo:nth-child(even) {
+            margin: 0 50px;
+        }
+
+        .inform__logo_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* bottom-banner */
+        .bottom-banner {
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        /* footer */
+
+        .footer {}
+
+        .footer__wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer__col {}
+
+        .footer__col.col-left {}
+
+        .footer__col.col-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer__logo {
+            margin-right: 15px;
+        }
+
+        .footer__logo.main {
+            display: block;
+        }
+
+        .footer__logo:last-child {
+            margin-right: 0;
+        }
+
+        .footer__col.col-right {
+            margin-left: 19px !important;
+        }
+
+        .footer__logo_img {}
+
+        .footer__text {
+            margin-bottom: 20px;
+        }
+
+        .footer__title {
+            margin: 20px 0 10px;
+            font-weight: 700;
+            line-height: 130%;
+            text-transform: uppercase;
+        }
+
+        .footer__links {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer__separator {
+            margin: 0 10px;
+        }
+
+        .footer__bottom {
+            text-align: center;
+        }
+
+        /* consts */
+
+        .text {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+        }
+
+        .text-underline {
+            text-decoration-line: underline;
+        }
+
+        /* colors consts */
+
+        .white-text {
+            color: #fff;
+        }
+
+        .footer-gray {
+            color: rgba(255, 255, 255, 0.50);
+        }
+
+        .bg-body {
+            background-color: #292623;
+        }
+
+        .bg-dark {
+            background-color: #3B332A;
+        }
+
+        @media only screen and (max-device-width: 750px) {
+            .container {
+                border-radius: 15px  !important;
+                margin: 0 auto  !important;
+                max-width: 280px  !important;
+                padding: 20px 20px 30px  !important;
+            }
+
+            .desktop-img {
+                display: none !important;
+            }
+
+            /* header */
+
+            .header {
+                padding: 20px 40px  !important;
+            }
+
+            .header__logo {
+                width: 100%  !important;
+                display: flex  !important;
+                margin-bottom: 20px  !important;
+            }
+
+            .header__logo_img {
+                width: 92px  !important;
+                margin: 0 auto  !important;
+            }
+
+            .header__nav {
+                margin-top: 0  !important;
+                float: none  !important;
+            }
+
+            .header__nav_link {
+                font-weight: 700  !important;
+            }
+
+            /* banner */
+
+            .banner {
+                background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890507407_main%20banner%20mobile_01H6REVG9FSPEA56PSFAAQ5GVN.png");
+                background-size: contain;
+                height: 450px;
+                width: 100%;
+            }
+
+            /* steps */
+
+            .steps {
+                background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890513064_numb%20block%20mobile_01H6REVNTANHSK7R67K6XBBHZ2.png");
+                background-size: contain;
+                height: 729px;
+                width: 100%;
+            }
+
+            /* inform */
+
+            .inform__text {
+                background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890504982_info%20mobile_01H6REVDXPKQ8E1P91Y05RV94C.png");
+                background-size: contain;
+                height: 122px;
+                width: 100%;
+                max-width: 281px;
+                margin: 0 auto 26px;
+            }
+
+            .inform__wrapper {
+                display: block  !important;
+                margin: 0  !important;
+                text-align: center !important;
+            }
+
+            .inform__logo {
+                display: inline-block  !important;
+                width: 135px !important;
+                height: auto  !important;
+            }
+
+            .inform__logo:nth-child(even) {
+                margin: 0 !important;
+            }
+
+            .inform__logo_second {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .inform__logo:last-child {
+                margin-top: 20px  !important;
+            }
+
+            /* bottom-banner */
+
+            .bottom-banner {
+                background-image: url("https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890501011_banner%20mobile_01H6REVABGBJFZAMS6N80HYAFD.png");
+                background-size: contain;
+                height: 280px;
+                width: 100%;
+            }
+
+            /* footer */
+
+            .footer__wrapper {
+                display: block  !important;
+            }
+
+            .footer__col.col-right {
+                display: block  !important;
+            }
+
+            .footer__col.col-right .footer__logo {
+                display: inline-block !important;
+            }
+
+            .footer__logo.main {
+                margin-bottom: 20px !important;
+            }
+
+            .footer__separator:last-of-type {
+                display: none !important;
+            }
+
+            .footer__separator.last {
+                display: none !important;
+            }
+
+            .footer__col.col-right {
+                margin-left: 0 !important;
+            }
+
+            /* перебиваем стили для темной темы gmail на ios. цвета необходимо задавать в градиенте.
+            u + .body selector - обращение к селектору в gmail на ios
+            div > u + .body    - обращение к селектору в gmail вне ios (чтобы снять градиенты, т.к. они не везде работают) */
+
+            u + .body .bg-body {
+                /*задаем как градиент, чтобы в черной теме GMAIL на IOS не перебивался цвет;*/
+                background-image: linear-gradient(#292623,#292623) !important;
+                background-color: transparent !important;
+            }
+
+            u + .body .bg-dark {
+                background-image: linear-gradient(#3B332A,#3B332A)!important;
+                background-color: transparent !important;
+            }
+
+            u + .body .white-text {
+                background-image:linear-gradient(#fff,#fff) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+
+            div > u + .body .white-text {
+                background-image:none !important;
+                background-clip: inherit !important;
+                color: #fff !important;
+            }
+
+            u + .body .footer-gray {
+                background-image:linear-gradient(rgba(255, 255, 255, 0.50),rgba(255, 255, 255, 0.50)) !important;
+                background-clip: text !important;
+                color: transparent !important;
+            }
+
+            div > u + .body .footer-gray {
+                background-image:none !important;
+                background-clip: inherit !important;
+                color: rgba(255, 255, 255, 0.50) !important;
+            }
+        }
+    </style>
+</head>
+<body class="body">
+<div class="root bg-body">
+    <div class="container">
+        <header class="header bg-dark">
+            <a class="header__logo" href="https://www.stakers.com/en/casino/">
+                <img class="header__logo_img"
+                     src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690889618076_logo_01H6RE0CDC3ACCJGTMQZWQR6PM.png"
+                     alt="stakers logo"/>
+            </a>
+
+            <div class="header__nav">
+                <a class="header__nav_link white-text" href="https://www.stakers.com/en/casino/">casino</a>
+                <a class="header__nav_link white-text" href="https://www.stakers.com/en/bookmaker/">betting</a>
+                <a class="header__nav_link white-text" href="https://www.stakers.com/en/predictions/">tips</a>
+            </div>
+        </header>
+
+        <a class="banner" href="https://www.stakers.com/en/casino/t/2208/">
+            <img class="banner__img desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890509208_main%20banner_01H6REVJ1RVM08T401W0E9V9K1.png">
+        </a>
+
+        <a class="steps" href="https://www.stakers.com/en/casino/t/2208/">
+            <img class="desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890514493_numb%20block_01H6REVQ6Z6JTYBAAXRQJ7ZGXA.png">
+        </a>
+
+        <div class="inform">
+            <div class="inform__text">
+                <img class="desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890506205_info_01H6REVF3X3BPTVCSXHY54F4S9.png">
+            </div>
+            <div class="inform__wrapper">
+                <a class="inform__logo" href="https://www.stakers.com/en/casino/t/2208/">
+                    <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890515925_1_01H6REVRKQD0K8YBBATXAHPJNA.png" alt="casino logo">
+                </a>
+                <a class="inform__logo inform__logo_second" href="https://www.stakers.com/en/bookmaker/">
+                    <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890517219_2_01H6REVSW378G5BEQ0DBX1NA8J.png" alt="betting logo">
+                </a>
+                <a class="inform__logo" href="https://www.stakers.com/en/casino/t/2208/">
+                    <img class="inform__logo_img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890518493_3_01H6REVV3YQ1RQMDHTYPQ3NE6Z.png" alt="try now logo">
+                </a>
+            </div>
+        </div>
+
+        <a class="bottom-banner" href="https://www.stakers.com/en/casino/t/2208/">
+            <img class="desktop-img" src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690890503749_banner_01H6REVCQ65H351X4YDPAV5N32.png">
+        </a>
+
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__col col-left">
+                    <a class="footer__logo main" href="https://www.stakers.com/en/">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690889618076_logo_01H6RE0CDC3ACCJGTMQZWQR6PM.png"
+                             alt="stakers logo"
+                             width="70"
+                             height="16.602">
+                    </a>
+                </div>
+                <div class="footer__col col-right">
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464422041_f1_01H6BRG8DYJ0D9JM1FQMNZ8E09.png"
+                             alt=""
+                             width="20"
+                             height="20">
+                    </div>
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464423694_f2_01H6BRG9YEMM5GBZRMNNTSZFKZ.png"
+                             alt=""
+                             width="49"
+                             height="22">
+                    </div>
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464425112_f3_01H6BRGB4BS3FYMEVTXD5STJ31.png"
+                             alt=""
+                             width="20"
+                             height="22"
+                        >
+                    </div>
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464426302_f4_01H6BRGC9HDNV6CJBKKQX91F2G.png"
+                             alt=""
+                             width="114"
+                             height="22">
+                    </div>
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464427500_f5_01H6BRGDEX58DSRQN17KQVHE5V.png"
+                             alt=""
+                             width="30"
+                             height="22">
+                    </div>
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464428865_f6_01H6BRGFKJRM623X667CFT9CVR.png"
+                             alt=""
+                             width="79"
+                             height="22">
+                    </div>
+                    <div class="footer__logo">
+                        <img class="footer__logo_img"
+                             src="https://userimg-assets-eu.customeriomail.com/images/client-env-115154/1690464430894_f7_01H6BRGGWPPBG3QDES604814X4.png"
+                             alt=""
+                             width="121"
+                             height="20">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__text footer-gray text">
+                Your email address has been verified and is now on our mailing list to receive regular promotions, tips and other information. This newsletter and all the deals that are listed on Stakers.com are related to gambling and are suitable for those at or above the legal age (18+) within the jurisdictions that allow online gambling.
+                <div class="footer__title footer-gray">DISCLAIMER</div>
+                Certain jurisdictions make online betting illegal. Before playing online, it's your responsibility to check the local regulations in your area. Stakers.com takes no responsibility for the actions you take.
+            </div>
+
+            <div class="footer__links">
+                <a class="footer__link footer-gray text" href="https://www.stakers.com/en/info/help/terms_and_conditions/">Terms and Conditions</a>
+                <span class="footer__separator footer-gray text">|</span>
+                <a class="footer__link footer-gray text" href="https://www.stakers.com/en/info/help/privacy_policy/">Privacy Policy</a>
+                <span class="footer__separator footer-gray text last">|</span>
+                <a class="footer__link footer-gray text-underline text" href="{% unsubscribe_url %}">Unsubscribe</a>
+            </div>
+
+            <div class="footer__bottom footer-gray text">
+                Have a question? Write to us
+                <a href="mailto:support@stakers.com">support@stakers.com</a>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
